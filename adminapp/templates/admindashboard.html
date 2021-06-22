@@ -1,0 +1,57 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block content %}
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+  
+<canvas id="myChart" class="p-2 pt-4" style="width:100%;"></canvas>
+
+<script>
+var xValues = ["Levi's", "Adidas", "Nike", "H&M", "Cindrella","AllenSolly"];
+var yValues = [55, 49, 44, 34, 38,50];
+var barColors = [ "rgba(63, 81, 181, 0.5)", "rgba(77, 182, 172, 0.5)", "rgba(66, 133, 244, 0.5)", "rgba(156, 39, 176, 0.5)", "rgba(233, 30, 99, 0.5)"];
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Selling brands population"
+    }
+  }
+});
+</script>
+<br>
+<div class="container-fluid pb-2">
+  <h4>Most Selling Brand:&nbsp;<small>Levi's</small></h4>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

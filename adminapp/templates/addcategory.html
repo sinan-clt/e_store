@@ -1,0 +1,47 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container py-3 ml-4 mt-3 mb-3 text-left">
+    <h3>Add Category:</h3>
+</div>
+
+
+<div class="container " style="height:500px; width: 100%;">
+    <form class="form bg-transparent mb-2" action="" method="POST" style="font-weight: 600; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
+
+        <div class="form-group p-5 m-auto">
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Brand:</label>
+            <div class="col-sm-3">
+            <select class="form-control" >
+                <option>Select Brand</option>
+              <option>Levi's</option>
+              <option>Adidas</option>
+              <option>Nike</option>
+              <option>AllenSolly</option>
+              <option>Cindrella</option>
+              <option>H&M</option>
+            </select>
+          </div>
+        </div>
+
+
+          <label class="control-label col-sm-2">Category:</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control">
+          </div>
+        </div> 
+
+
+        <a href=""> <button type="button" class="btn btn-primary mb-3 " style="margin-left: 65px;">Add </button></a>  
+
+          
+         </form>
+      </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,162 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    font-family: 'Poppins' sans-serif;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    
+}
+
+h3{
+    font-size: 1.6rem;
+    font-weight: 700;
+    
+}
+
+h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+    
+}
+
+h5{
+    font-size: 1.8rem;
+    font-weight: 500;
+    
+}
+
+h6{
+   color:rgb(7, 6, 6)
+}
+
+hr{
+    width: 50px;
+    height: 1px;
+    background-color: grey;
+}
+
+
+
+
+#copyright p{
+    text-align: center;
+    color:white;
+}
+
+footer{
+    background-color: black;
+    
+    
+}
+footer h5{
+    font-weight: 400;
+    color: azure;
+    font-size: 1rem;
+    
+}
+footer li a{
+    color: #999;
+    
+}
+footer li a:hover{
+    color:#D8D8D8
+}
+footer h5{
+    font-size: 1.4rem;
+    font-weight: 400;
+    
+}
+
+footer i{
+    color: white;
+    size: 20px;
+    font-size: 1.25rem;
+   
+    
+}
+
+footer p{
+    color: #999;
+}
+footer h6{
+    color: white;
+}
+
+
+/* //// */
+
+  
+  .sidebar {
+    font-family: Arial, Helvetica, sans-serif;
+   font-weight: 600;
+   
+
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    
+    /* ///  check */
+    height: auto;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: rgb(255, 248, 248);
+    padding: 20px;
+    text-decoration: none;
+  }
+ 
+  
+   
+/*   .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  } */
+   
+  .sidebar a:hover:not(.active) {
+    
+    color: rgb(245, 11, 11);
+  }
+  
+  
+  /* div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  } */
+
+  .side-bar ul i{
+      color: rgb(238, 43, 43);
+     
+  }
+
+
+ 

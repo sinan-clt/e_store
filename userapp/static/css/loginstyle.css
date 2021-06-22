@@ -1,0 +1,600 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body{
+    font-family: 'Poppins' sans-serif;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+    
+}
+
+h3{
+    font-size: 1.6rem;
+    font-weight: 700;
+    
+}
+
+h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+    
+}
+
+h5{
+    font-size: 1.8rem;
+    font-weight: 500;
+    
+}
+
+h6{
+   color:rgb(7, 6, 6)
+}
+/* 
+hr{
+    align-items: flex-start;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(129, 107, 107);
+} */
+
+.star{
+    padding: 10px 0px;
+}
+
+.star i{
+    font-size: 0.8rem;
+    color: goldenrod;
+
+}
+
+
+.navbar{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+   
+    box-shadow: 0 5px 100px rgba(0, 0, 0, 0.7);
+    
+    
+}
+
+.navbar form{
+    padding-left:100px;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link{
+    color: rgb(122, 72, 72);
+    transition: 0.3 ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link:active,
+.navbar i :active{
+    color: coral;
+}
+
+.navbar i{
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+} 
+
+.h1brand{
+    text-align: center;
+
+    font-weight: 500;
+
+}
+
+  
+
+
+
+
+  
+
+
+  
+
+
+.carousel-inner img{
+    
+    height: 700px;
+    width:100%
+    
+}
+
+.carousel-inner h5{
+    font-weight: 700;
+    font-family: monospace;
+    color:rgb(219, 203, 203)
+}
+.carousel-inner p{
+    color: burlywood;
+
+}
+#new .one img{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#new .one .details{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left: 0;
+    transition: 0.3 ease;
+}
+#new .one:hover .details{
+   
+    background-color: rgba(139, 132, 132, 0.7)
+}
+#new .one .details h2{
+    color: rgb(20, 19, 19);
+    font-weight: 800;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
+}
+
+ 
+ 
+
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+
+}
+.product img{ 
+    transition: 0.3s all;
+ 
+
+}
+
+.product:hover img{
+    opacity: 0.7;
+}
+
+
+
+#offer{
+    background-image: url("/static/images/Smart-Watc_2000x.jpg");
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+#offer h1{
+    color: rgb(225, 232, 238);
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#offer button{
+    background-color: black
+}
+
+#banner{
+    background-image: url("/static/images/suit-690048.jpg");
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position:top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+#banner h4{
+    color: honeydew;
+}
+
+#banner h1{
+    color: honeydew;
+}
+
+#banner button{
+    background-color: #FF7F50
+}
+
+#copyright p{
+    text-align: center;
+    color:white;
+}
+
+footer{
+    background-color: black;
+    
+    
+}
+footer h5{
+    font-weight: 400;
+    color: azure;
+    font-size: 1rem;
+    
+}
+footer li a{
+    color: #999;
+    
+}
+footer li a:hover{
+    color:#D8D8D8
+}
+footer h5{
+    font-size: 1.4rem;
+    font-weight: 400;
+    
+}
+
+footer i{
+    color: white;
+    size: 20px;
+    font-size: 1.25rem;
+   
+    
+}
+
+footer p{
+    color: #999;
+}
+footer h6{
+    color: white;
+}
+
+
+
+#featured p{
+    color: rgb(58, 47, 47);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 100;
+}
+
+#featured h2{
+    font-weight: bold;
+}
+
+
+.product img{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    object-fit: cover;
+
+}
+
+
+#featured > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
+    background-color: black;
+}
+
+#featured > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
+    background-color: rgb(78, 71, 71);
+    color: #fff;
+}
+
+.pagination a {
+    color: black;
+}
+
+
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.sproduct select{
+    display: block;
+    padding: 5px 10 px;
+}
+.sproduct input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.sproduct input:focus{
+    outline: none;
+}
+.sproduct select:focus{
+    outline: none;
+} 
+
+/*  /////
+ */
+.account-page{
+    
+    
+    padding:50px 0;
+    /* background: radial-gradient(rgb(56, 59, 37),#af4444); */
+    background:linear-gradient( rgba(0, 0, 0, 0.4) , rgba(0, 0, 0, 0.4)),url("/static/images/maimages/features.png");
+    background-position: center;
+    background-size: cover;
+
+}
+
+.form-container{
+    box-shadow: 0 0 200px rgb(194, 12, 12);
+    border-radius: 20px;
+    background: rgb(223, 220, 209);
+    width:300px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+}
+.form-container span{
+   font-size: larger;
+    font-weight: bold;
+    padding: 0 10px;
+    color: rgb(10, 9, 9);
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+
+}
+
+.form-btn{
+    display: inline-block;
+
+}
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+    
+
+
+}
+.form-container i{
+    color: rgb(19, 17, 16);
+    
+}
+form input{
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc ;
+    
+}
+
+form .btn{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+form .btn:focus{
+    outline: none;
+}
+
+#login{
+    left: -300px;
+
+}
+
+#signup{
+    left: 0;
+
+}
+form a{
+    font-size: 16px;
+
+}
+
+#indicator{
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+
+
+
+.wrapper{
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    margin: 50px auto;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
+    padding: 30px;
+  }
+  
+  .wrapper .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fec107;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .wrapper .form{
+    width: 100%;
+  }
+  
+  .wrapper .form .inputfield{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .wrapper .form .inputfield label{
+     width: 200px;
+     color: #757575;
+     margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .wrapper .form .inputfield .input,
+  .wrapper .form .inputfield .textarea{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+  
+  .wrapper .form .inputfield .textarea{
+    width: 100%;
+    height: 125px;
+    resize: none;
+  }
+  
+  .wrapper .form .inputfield .custom_select{
+    position: relative;
+    width: 100%;
+    height: 37px;
+  }
+  
+  .wrapper .form .inputfield .custom_select:before{
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    border: 8px solid;
+    border-color: #d5dbd9 transparent transparent transparent;
+    pointer-events: none;
+  }
+  
+  .wrapper .form .inputfield .custom_select select{
+    -webkit-appearance: none;
+    -moz-appearance:   none;
+    appearance:        none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid #d5dbd9;
+    border-radius: 3px;
+  }
+  
+  
+  .wrapper .form .inputfield .input:focus,
+  .wrapper .form .inputfield .textarea:focus,
+  .wrapper .form .inputfield .custom_select select:focus{
+    border: 1px solid #fec107;
+  }
+  
+  .wrapper .form .inputfield p{
+     font-size: 14px;
+     color: #757575;
+  }
+  .wrapper .form .inputfield .check{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+  .wrapper .form .inputfield .check input[type="checkbox"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  .wrapper .form .inputfield .check .checkmark{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fec107;
+    display: block;
+    position: relative;
+  }
+  .wrapper .form .inputfield .check .checkmark:before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 5px;
+    height: 2px;
+    border: 2px solid;
+    border-color: transparent transparent #fff #fff;
+    transform: rotate(-45deg);
+    display: none;
+  }
+  .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
+    background: #fec107;
+  }
+  
+  .wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
+    display: block;
+  }
+  
+  .wrapper .form .inputfield .btn{
+    width: 100%;
+     padding: 8px 10px;
+    font-size: 15px; 
+    border: 0px;
+    background:  #fec107;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+  }
+  
+  .wrapper .form .inputfield .btn:hover{
+    background: #ffd658;
+  }
+  
+  .wrapper .form .inputfield:last-child{
+    margin-bottom: 0;
+  }
+  
+  @media (max-width:420px) {
+    .wrapper .form .inputfield{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .wrapper .form .inputfield label{
+      margin-bottom: 5px;
+    }
+    .wrapper .form .inputfield.terms{
+      flex-direction: row;
+    }
+  }

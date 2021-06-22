@@ -1,0 +1,58 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container py-3 ml-4 mt-3 mb-3 text-left">
+    <h3>BRANDS:</h3>
+</div>
+
+  
+<div class="container">
+    <table class="table table-hover table-border table-active" style=" align-items: center; ">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            
+            <th scope="col">Brands</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Cindrella</td>
+        
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Levi's</td>
+    
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>AllenSolly</td>
+    
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Adidas</td>
+          
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Nike</td>
+          
+          </tr>
+          <tr>
+            <th scope="row">006</th>
+            <td>H&M</td>
+          
+          </tr>
+
+        </tbody>
+      </table>
+  <a href="addbrand"> <button type="button" class="btn btn-outline-primary mb-3">Add Brand</button></a>  
+
+</div>
+
+{% endblock %}

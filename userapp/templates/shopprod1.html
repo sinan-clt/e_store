@@ -1,0 +1,138 @@
+{% extends 'shopbase.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="container sproduct my-5 pt-5">
+  <div class="row mt-5" >
+    <div class="col-lg-5 col-md-12 col-12 mt-5">
+    <img src="{% static 'images/shop/1.jpg' %}" alt="" srcset="" id="MainImg"  class="img-fluid w-100 pb-1">
+
+
+    <div class="small-img-group">
+      <div class="small-img-col">
+        <img src="{% static 'images/shop/1.jpg' %}" alt="" width="100%" srcset="" class="small-img">
+      </div>
+      <div class="small-img-col">
+        <img src="{% static 'images/shop/24.jpg' %}" alt="" width="100%" srcset="" class="small-img">
+      </div>
+      <div class="small-img-col">
+        <img src="{% static 'images/shop/25.jpg' %}" alt="" width="100%" srcset="" class="small-img">
+      </div>
+      <div class="small-img-col">
+        <img src="{% static 'images/shop/26.jpg' %}" alt="" width="100%" srcset="" class="small-img">
+      </div>
+    </div>
+    </div>
+
+
+    <div class="col-lg-5 col-md-12 col-12">
+      <h6 class="mt-5">T-shirt</h6>
+      <h3 class="py-4">Men's Fashion T-shirts</h3>
+      <h2>899.00</h2>
+      <select class="my-3">
+      <option>Select Size</option>
+      <option>XL</option>
+      <option>L</option>
+      <option>M</option>
+      <option>S</option>
+    </select>
+    <input type="number" value="1">
+    <button type="button" class="btn btn-dark btn-outline-warning">ADD TO CART</button>
+    <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    <h4 class="mt-5 mb-5"> Product Details</h4>
+    <span>dsjcvdjsbv sdbckjdb dbdbvdfjk ddvbdfkv dfvhbdfkv dfvhkdf fvbhdfk dfhkvbdf fhf 
+      hfdvhdbhv dfvhkfbv dfvb h t gf ht h rt grfgdfgdfv fgfd gg vfvr g g f grfgdfgdfvf g 
+      f bf b fg fdg  gfffffff dgdfgdjkgndf fkjfgjrf jkdfbjkdf dfvbfkv dfkbvdf 
+      dfvbdfvjfdv dffjvbjdfv dfuvdf vdfvb odffvnjk dfjkbvjkfd jkdfbv dfjkvbjkdf jkbfv 
+      dfvjbdfhv jdbfdfv fvbfjv dfkjvbdfjk dfvjkjbdfjv dfvjbdfv dfjvbdf  dfkfjvbkjfd
+      dfjvbdfjbvjk dfjvbjkfbvjfdv jdfbvjkfbvfv dfvbbjfdbvjkdfv fjvbdfv 
+    </span>
+      </div>
+  </div>
+</section>
+
+<section id="featured" class="my-5 pb-5">
+  <div class="container text-center mt-5 py-5 pb-5">
+    <h3>Related Products</h3>
+    <hr>
+    
+  </div>
+  <div class="row mx-auto container-fluid">
+    <div onclick="window.location.href='shop';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/featured/1.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <h5 class="p-name">Shoes</h5>
+      <h4 class="p-price">999.00</h4>
+    <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+    <div onclick="window.location.href='shop';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/shop/1.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <h5 class="p-name">Shoes</h5>
+      <h4 class="p-price">999.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning ">BUY NOW</button>
+    </div>
+    <div onclick="window.location.href='shop';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/adidas-men-mesh-lace-up-running-shoes2.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <h5 class="p-name">Shoes</h5>
+      <h4 class="p-price">999.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+    <div onclick="window.location.href='shop';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/product-4.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <h5 class="p-name">Shoes</h5>
+      <h4 class="p-price">999.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+
+  </div>
+</section>
+
+
+      
+<script>
+  var MainImg = document.getElementById('MainImg');
+  var smallimg = document.getElementsByClassName('small-img')
+
+  smallimg[0].onclick = function(){
+    MainImg.src =smallimg[0].src;
+  }
+  smallimg[1].onclick = function(){
+    MainImg.src =smallimg[1].src;
+  }
+  smallimg[2].onclick = function(){
+    MainImg.src =smallimg[2].src;
+  }
+  smallimg[3].onclick = function(){
+    MainImg.src =smallimg[3].src;
+  }
+</script>
+
+{% endblock %}
