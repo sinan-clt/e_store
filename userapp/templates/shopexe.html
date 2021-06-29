@@ -1,0 +1,50 @@
+{% extends 'shopbase.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section id="featured" class="my-5 py-5">
+    <div class="container mt-5 py-5 pb-5">
+      <h2>Men's suits</h2>
+      <hr>
+      <p>Here you can check out our new produtcs</p>
+      
+    </div>
+    <div class="row mx-auto container">
+     
+      <div onclick="window.location.href='shopprod11';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/formal-suits-500x500.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Peter England</small>
+        <h5 class="p-name">Men's suits</h5>
+        <h4 class="p-price">2999.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+      <div onclick="window.location.href='shopprod17';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/dsdfdf.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Allen Solly</small>
+        <h5 class="p-name">Men's suits</h5>
+        <h4 class="p-price">2999.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+      
+
+
+
+    </div>
+  </section>
+  {% endblock %}

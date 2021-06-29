@@ -1,0 +1,221 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+.card img{
+    height: 15em;
+    
+}
+.card{
+  height: 31em;
+}
+.pagination a {
+    color: black;
+}
+
+
+ 
+
+</style>
+
+<div class="container py-3 ml-4 mt-3 mb-3 text-left">
+    <h3>Products:</h3>
+</div>
+
+
+<section class="container bg-white mb-5">
+  
+
+  <div class="row p-3">
+
+      <div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+  <div class="card">
+      <img src="{% static 'images/cFa2wTdh7N.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title">Self Design Single Breasted Casual Men's Full Sleeve Suit (Dark Green)</h6>
+        <ul>
+            <li>Status : Active</li>
+            <li>Brand : ALLEN SOLLY</li>
+            <li>Category : Men's suits</li>
+              <li>Price : 2999.00</li>     
+        </ul>  
+      </div>
+      <div class="card-footer text-left">
+        <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+<div class="card">
+  <img src="{% static 'images/f7x7-roadster-men-black-green-regular-fit-checked-casual-shirt_500x500_0.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">Roadster Men Regular Fit Checkered Spread Collar Casual Shirt</h6>
+    <ul>
+        <li>Status : Active</li>
+        <li>Brand : ROADSTER</li>  
+        <li>Category : Shirt</li>
+              <li>Price : 999.00</li>   
+    </ul>  
+  </div>
+  <div class="card-footer text-left">
+    <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+    </div>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+<div class="card">
+  <img src="{% static 'images/1b9k5-levis-men-black-printed-hooded-sweatshirt_500x500_0.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">Levi's Full Sleeve Printed Men's Hoddie</h6>
+    <ul>
+        <li>Status : Active</li>
+        <li>Brand : LEVI'S</li> 
+        <li>Category : Hoodies</li>
+              <li>Price : 1799.00</li>    
+    </ul>  
+  </div>
+  <div class="card-footer text-left">
+    <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+    </div>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+<div class="card">
+  <img src="{% static 'images/asasddf.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">Nike AIR MAX MOTION 2 Running Shoe</h6>
+    <ul>
+        <li>Status : Active</li>
+        <li>Brand : NIKE</li> 
+        <li>Category : Shoe</li>
+              <li>Price : 2999.00</li>    
+    </ul>  
+  </div>
+  <div class="card-footer text-left">
+    <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+    </div>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+<div class="card">
+  <img src="{% static 'images/air-zoom-pegasus-36.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">Nike AIR ZOOM VOMERO 14 Running Shoe</h6>
+    <ul>
+        <li>Status : Active</li>
+        <li>Brand : NIKE</li>    
+        <li>Category : Shoe</li>
+              <li>Price : 1299.00</li>     
+    </ul>  
+  </div>
+  <div class="card-footer text-left">
+    <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+    </div>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+<div class="card">
+  <img src="{% static 'images/zoom-pegasus-turbo-2-womens-running-shoe-8zx1wM.png' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">Nike Zoom Span 3 Running Shoes For Men</h6>
+    <ul>
+        <li>Status : Active</li>
+        <li>Brand : NIKE</li> 
+        <li>Category : Shoe</li>
+              <li>Price : 1299.00</li>    
+    </ul>  
+  </div>
+  <div class="card-footer text-left">
+    <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+
+    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+    </div>
+</div>
+</div>
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+<div class="card">
+  <img src="{% static 'images/jd-uk-yeezy-signup-page-mobile-02-182dfbe14cbd9922ab9f07466e452a76.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">Adidas Yeezy Boost 350 V2 “Beluga”</h6>
+    <ul>
+        <li>Status : Active</li>
+        <li>Brand : ADIDAS</li>  
+        <li>Category : Shoe</li>
+              <li>Price : 999.00</li>   
+    </ul>  
+  </div>
+  <div class="card-footer text-left">
+    <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+    </div>
+</div>
+</div>
+
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+<div class="card">
+  <img src="{% static 'images/169600124_04_Front Detail.jpg' %}"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 class="card-title">Printed Men Round Neck Maroon T-Shirt</h6>
+    <ul>
+        <li>Status : Active</li>
+        <li>Brand : LEVI'S</li>     
+        <li>Category : T-shirt</li>
+              <li>Price : 1099.00</li>
+    </ul>  
+  </div>
+  <div class="card-footer text-left">
+    <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+    <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<div class="container pb-3 mb-4">
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link text-danger text-center" style="width: 60px" href="prodviewpage2" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item "><a class="page-link"  href="productview">1</a></li>
+      <li class="page-item "><a class="page-link" href="prodviewpage2">2</a></li>
+      <li class="page-item active"><a class="page-link" style="background-color: black;" href="prodviewpage3">3</a></li>
+      <li class="page-item"><a class="page-link" href="prodviewpage4">4</a></li>
+      
+      <li class="page-item">
+        <a class="page-link text-danger text-center" style="width: 60px" href="prodviewpage4" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,161 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loginadminstyle.css' %}">
+    <title>admin</title>
+</head>
+
+  
+  <body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark w-100">
+          <div class="container">
+            <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %} " class="">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <li class="nav-item active col-12 col-lg-auto">
+                  <a class="nav-link text-white btn-outline-info rounded-pill text-center" href="admindashboard">Home 
+                    <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item col-12 col-lg-auto">
+                  <a class="nav-link text-white btn-outline-info rounded-pill text-center" href="signupadmin">Sign up/Login</a>
+                </li>
+                <li class="nav-item col-12 col-lg-auto">
+                    <a class="nav-link text-white btn-outline-info rounded-pill text-center" href="loginadmin">Login</a>
+                
+              </ul>
+            </div>
+            </div>
+          </nav>   
+        
+
+
+</header> 
+
+<div>
+<div class="container login" style="padding-top: 40px; padding-bottom: 40px;">
+	<h3 style="color: white;">Sign Up</h3>
+	
+	<form action="" class="" style="border:1px solid rgb(107, 75, 75); background-color: silver; border-radius: 10px; ">
+		<div class="container p-2">
+			<label><b>User name</b></label>
+			<input type="text" placeholder="Enter user name"  name="name" style="border: 1px solid rgb(68, 64, 64); border-radius:5px  ; width: 100%; padding: 12px 20px;margin: 8px 0;">
+<br>
+            <label><b>Email</b></label>
+			<input type="email" placeholder="Enter email id"  name="email" style="border: 1px solid rgb(68, 64, 64); border-radius:5px  ; width: 100%; padding: 12px 20px;margin: 8px 0;">
+
+<br>
+			<label><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" style="border: 1px solid rgb(68, 64, 64); border-radius:5px  ;width: 100%; padding: 12px 20px;margin: 8px 0;">
+  <br>
+            <label><b>Confirm Password</b></label>
+             <input type="password" placeholder="Repeat Password" name="psw" style="border: 1px solid rgb(68, 64, 64); border-radius:5px  ;width: 100%; padding: 12px 20px;margin: 8px 0;">
+
+
+
+             <div class="">
+			
+                <button type="button" class="btn-lg btn-success mt-1 ml-2 mr-2">Sign Up</button><a href="loginadmin">Login here</a> 
+			</div>
+           
+           
+		</div>
+	</form>
+</div>
+
+
+</div>
+
+<footer class=" py-2 w-100">
+    <div class="row container mx-auto pt-5">
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <img src="{% static 'images/logggik.png' %}" alt="" srcset="" class="pb-4">
+        <p class="pt-3">shopify is a online shopping site for mens. Its an Indian e-commerce company, headquartered in Bangalore, Karnataka, India, and incorporated in Singapore as a private limited company.
+        </p>
+      </div>
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Featured</h5>
+        <ul class="text-uppercase list-unstyled">
+          <li><a href="#" style="text-decoration: none;">Men</a></li>
+          <li><a href="#"style="text-decoration: none;">fashion</a></li>
+          <li><a href="#"style="text-decoration: none;">watches</a></li>
+          <li><a href="#">cloths</a></li>
+          <li><a href="#"style="text-decoration: none;">New arrivals</a></li>
+          <li><a href="#"style="text-decoration: none;">shoes</a></li>
+          <li><a href="#"style="text-decoration: none;">executive</a></li>
+          <li><a href="#"style="text-decoration: none;">casual</a></li>
+        </ul>
+      </div>
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Contact Us</h5>
+        <div>
+          <h6 class="text-uppercase">Address</h6>
+          <p>123 STREET ,BANGALORE </p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">Phone</h6>
+          <p>+91 9857454725</p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">email</h6>
+          <p>shopifymens@gmail.com</p>
+        </div>
+      </div>
+  
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <h5 class="pb-2">CONTACT US THROUGH</h5>
+        <div class="row">
+          <i class="fab fa-instagram p-3"></i>
+          <i class="fab fa-facebook p-3"></i>
+          <i class="fab fa-twitter p-3"></i>
+          
+  
+          <div class="container pt-5">
+          
+          <img src="{% static 'images/payment.png' %}" alt="" srcset="">
+        </div>
+        
+  
+          </div>
+          
+      
+    </div>
+  
+    <div class="container" id="copyright">
+      <hr>
+      <div class="row">
+          <div class="col-md-12 col-lg-12 col-12">
+             
+              <p class="copyright"><i class="far fa-copyright"></i>&nbsp;COPYRIGHT 2021, ALL RIGHTS RESERVED</p>
+  
+              
+          </div>
+      </div>
+      </div>
+  
+  </div>
+  
+  </footer> 
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>

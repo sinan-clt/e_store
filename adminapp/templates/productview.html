@@ -1,0 +1,226 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+.card img{
+    height: 15em;
+    
+}
+.card{
+  height: 31em;
+}
+.pagination a {
+    color: black;
+}
+
+
+ 
+
+</style>
+
+<div class="container py-3 ml-4 mt-3 mb-3 text-left">
+    <h3>Products:</h3>
+</div>
+
+<section class="container bg-white mb-5">
+  
+
+        <div class="row p-3">
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+        <div class="card">
+            <img src="{% static 'images/shop/1.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-title">H&M Men's Plain T-shirts</h6>
+              <ul>
+                  <li>Status : Active</li>
+                  <li>Brand : H&M</li> 
+                  <li>Category : T-shirt</li>
+                  <li>Price : 699.00</li>
+                    
+              </ul>  
+            </div>
+            <div class="card-footer text-left">
+              <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+              </div>
+          </div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+    <div class="card">
+        <img src="{% static 'images/shop/6.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Cindrella Men's Hoodies</h6>
+          <ul>
+              <li>Status : Active</li>
+              <li>Brand : CINDRELLA</li>
+              <li>Category : Hoodies</li>
+              <li>Price : 899.00</li>
+
+          </ul>  
+        </div>
+        <div class="card-footer text-left">
+        <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+          </div>
+      </div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+    <div class="card">
+        <img src="{% static 'images/png (2).jfif.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Calibrate Transit Yellow Running Shoes</h6>
+          <ul>
+              <li>Status : Active</li>
+              <li>Brand : PUMA</li>
+              <li>Category : Shoe</li>
+              <li>Price : 1999.00</li>     
+          </ul>  
+        </div>
+        <div class="card-footer text-left">
+          <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+          </div>
+      </div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+    <div class="card">
+        <img src="{% static 'images/floatride-energy-grow-mens-running-shoes (1).jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Floatride Symmetros Running Shoes</h6>
+          <ul>
+              <li>Status : Active</li>
+              <li>Brand : REEBOK</li> 
+              <li>Category : Shoe</li>
+              <li>Price : 1899.00</li>    
+          </ul>  
+        </div>
+        <div class="card-footer text-left">
+          <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+          </div>
+      </div>
+</div>
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+    <div class="card">
+        <img src="{% static 'images/featured/1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Casual shoes For Men (White)</h6>
+          <ul>
+              <li>Status : Active</li>
+              <li>Brand : KARLIN</li>     
+              <li>Category : Shoe</li>
+              <li>Price : 999.00</li>
+          </ul>  
+        </div>
+        <div class="card-footer text-left">
+          <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+          </div>
+      </div>
+</div>
+  
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+    <div class="card">
+        <img src="{% static 'images/Noise-ColorFit-Pro-3-vs-Noise-ColorFit-Pro-2.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Noise ColorFit Pro 2 Smartwatch (Black Strap, Regular)</h6>
+          <ul>
+              <li>Status : Active</li>
+              <li>Brand : NOISE</li>  
+              <li>Category : Watch</li>
+              <li>Price : 2999.00</li>   
+          </ul>  
+        </div>
+        <div class="card-footer text-left">
+          <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+          </div>
+      </div>
+</div>
+  
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+    <div class="card">
+        <img src="{% static 'images/gallery-1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Printed Men Round Neck Red T-Shirt</h6>
+          <ul>
+              <li>Status : Active</li>
+              <li>Brand : PUMA</li>   
+              <li>Category : T-shirt</li>
+              <li>Price : 899.00</li>  
+          </ul>  
+        </div>
+        <div class="card-footer text-left">
+          <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+          </div>
+      </div>
+</div>
+  
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 pt-3">
+    <div class="card">
+        <img src="{% static 'images/product-7.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">Aero Solid Men Round Neck T-Shirt</h6>
+          <ul>
+              <li>Status : Active</li>
+              <li>Brand : AERO</li>    
+              <li>Category : T-shirt</li>
+              <li>Price : 699.00</li> 
+          </ul>  
+        </div>
+        <div class="card-footer text-left">
+          <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+
+          <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+          </div>
+      </div>
+</div>
+  
+
+   </div>
+
+
+</section>
+
+<div class="container pb-3 mb-4">
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link text-danger text-center" style="width: 60px" href="productview" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item active"><a class="page-link" style="background-color: black;" href="productview">1</a></li>
+      <li class="page-item"><a class="page-link" href="prodviewpage2">2</a></li>
+      <li class="page-item"><a class="page-link" href="prodviewpage3">3</a></li>
+      <li class="page-item"><a class="page-link" href="prodviewpage4">4</a></li>
+      
+      <li class="page-item">
+        <a class="page-link text-danger text-center" style="width: 60px" href="prodviewpage2" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+
+{% endblock %}

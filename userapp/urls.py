@@ -42,6 +42,25 @@ urlpatterns = [
     path('shopprod30',views.shopprod30,name='shopprod30'),
     path('shopprod31',views.shopprod31,name='shopprod31'),
     path('shopprod32',views.shopprod32,name='shopprod32'),
+    path('shopshoes',views.shopshoes,name='shopshoes'),
+    path('shopmensfash',views.shopmensfash,name='shopmensfash'),
+    path('shopwatches',views.shopwatches,name='shopwatches'),
+    path('shopexe',views.shopexe,name='shopexe'),
+    path('shopshirts',views.shopshirts,name='shopshirts'),
+    path('shopjeans',views.shopjeans,name='shopjeans'),
+    path('shoptshirt',views.shoptshirt,name='shoptshirt'),
+    path('shopsmartwatches',views.shopsmartwatches,name='shopsmartwatches'),
+    path('shophoodies',views.shophoodies,name='shophoodies'),
+    path('shopcasualshoes',views.shopcasualshoes,name='shopcasualshoes'),
+    path('shopbasenavtest',views.shopbasenavtest,name='shopbasenavtest'),
+    path('editprofile',views.editprofile,name='editprofile'),
+    path('checkout',views.checkout,name='checkout'),
+    path('payment',views.payment,name='payment'),
+    path('paymentcomplete',views.paymentcomplete,name='paymentcomplete'),
+    path('paymentfail',views.paymentfail,name='paymentfail'),
+    
+    
+
 
 
     

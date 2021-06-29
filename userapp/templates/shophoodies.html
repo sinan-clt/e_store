@@ -1,0 +1,78 @@
+{% extends 'shopbase.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section id="featured" class="my-5 py-5">
+  <div class="container mt-5 py-5 pb-5">
+    <h2>Men's Hoodies</h2>
+    <hr>
+    <p>Here you can check out our new produtcs</p>
+    
+  </div>
+  <div class="row mx-auto container">
+    
+    <div onclick="window.location.href='shopprod2';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/shop/6.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Cindrella</small>
+        <h5 class="p-name">Hoodies</h5>
+        <h4 class="p-price">899.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning ">BUY NOW</button>
+      </div>
+
+     
+      <div onclick="window.location.href='shopprod9';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/product-3.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Alan Jones</small>
+        <h5 class="p-name">Hoodies</h5>
+        <h4 class="p-price">1299.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+      <div onclick="window.location.href='shopprod19';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/hyhyhy.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Levi's</small>
+        <h5 class="p-name">Hoodies</h5>
+        <h4 class="p-price">1799.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+      <div onclick="window.location.href='shopprod26';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/ghjuyb.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Puma</small>
+        <h5 class="p-name">Hoodies</h5>
+        <h4 class="p-price">1199.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+  
+  </div>
+</section>
+
+{% endblock %}

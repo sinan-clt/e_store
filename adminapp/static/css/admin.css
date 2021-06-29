@@ -106,8 +106,8 @@ footer h6{
     width: 200px;
     
     /* ///  check */
-    height: auto;
-    overflow: auto;
+     height: auto;
+    overflow: auto; 
   }
   
   .sidebar a {

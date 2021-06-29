@@ -1,0 +1,86 @@
+{% extends 'shopbase.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section id="featured" class="my-5 py-5">
+  <div class="container mt-5 py-5 pb-5">
+    <h2>Men's watches</h2>
+    <hr>
+    <p>Here you can check out our new produtcs</p>
+    
+  </div>
+  <div class="row mx-auto container">
+    
+      <div onclick="window.location.href='shopprod6';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/Noise-ColorFit-Pro-3-vs-Noise-ColorFit-Pro-2.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Noise</small>
+
+        <h5 class="p-name">Watch</h5>
+        <h4 class="p-price">2999.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning ">BUY NOW</button>
+      </div>
+     
+
+    
+      <div onclick="window.location.href='shopprod16';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/Sonata-77031nm03-Metal-Analog-Men-SDL666892191-2-170d9.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Sonata</small>
+        <h5 class="p-name">Watch</h5>
+        <h4 class="p-price">2799.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+      <div onclick="window.location.href='shopprod13';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/13507200.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Apple</small>
+
+        <h5 class="p-name">Watch</h5>
+        <h4 class="p-price">43999.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+      
+     
+      <div onclick="window.location.href='shopprod31';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/fgfgfgh.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Fastrack</small>
+
+        <h5 class="p-name">Watch</h5>
+        <h4 class="p-price">3999.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+     
+
+  
+  </div>
+</section>
+
+{% endblock %}

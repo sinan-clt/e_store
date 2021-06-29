@@ -1,0 +1,69 @@
+{% extends 'shopbase.html' %}
+{% load static %}
+{% block content %}
+
+
+<section id="featured" class="my-5 py-5">
+  <div class="container mt-5 py-5 pb-5">
+    <h2>Casual shirts</h2>
+    <hr>
+    <p>Here you can check out our new produtcs</p>
+    
+  </div>
+  <div class="row mx-auto container">
+   
+    <div onclick="window.location.href='shopprod12';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/resize.jfif.png' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Louis Vuitton</small>
+
+        <h5 class="p-name">Shirt</h5>
+        <h4 class="p-price">1199.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+      <div onclick="window.location.href='shopprod18';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/dfdfdfdser.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Roadster</small>
+
+        <h5 class="p-name">Shirt</h5>
+        <h4 class="p-price">999.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning ">BUY NOW</button>
+      </div>
+
+      <div onclick="window.location.href='shopprod28';" class="product text-center col-lg-3 col-md-4 col-12">
+        <img src="{% static 'images/cdscdscfdsc.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <small>Roadster</small>
+
+        <h5 class="p-name">Shirt</h5>
+        <h4 class="p-price">999.00</h4>
+        <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+      </div>
+    
+ 
+    
+
+
+  </div>
+</section>
+
+{% endblock %}

@@ -14,40 +14,56 @@
 </head>
 <body>
 
-    <section>
-        <nav class="navbar navbar-expand-lg navbar-light  bg-secondary">
-          <div class="container">
-            <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %} " class="pb-1">
-            
-            <button class="navbar-toggler"   type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto ">
-                <li class="nav-item col-12 col-lg-auto">
-                  <a class="nav-link text-white btn-outline-dark rounded-pill text-center"  href="user">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item col-12 col-lg-auto">
-                  <a class="nav-link text-white btn-outline-dark rounded-pill text-center" href="shop">Shop</a>
-                </li>
-               
-                <li class="nav-item col-12 col-lg-auto">
-                  <a class="nav-link text-white btn-outline-dark rounded-pill text-center" href="#foote">Contact Us</a>
-                </li>
-                <li class="nav-item col-12 col-lg-auto">
-                  <a class="nav-link text-white btn-outline-dark rounded-pill text-center active" href="login">Sign Up/Login</a>
-                </li>
-               
-                
-              </ul>
-              
-            </div>
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-light  bg-secondary  fixed-top ">
+      <div class="container-fluid">
+    <a href="user">  <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %}" class=""></a> 
+        
+     <div class="m-auto w-100 ">
+        <form action="" class="m-auto w-100">
+          <div class="input-group">
+            <input type="text"  name="search" id="search" class="form-control
+             border border-right-0" placeholder="search for everything....">
+             <span class="input-group-append">
+               <button class="btn btn-secondary border border-left-0 search-btn" type="submit"
+               id="srch"><i class="fa fa-search"></i></button>
+             </span>
           </div>
-          </nav>
-    </section>
+        </form>
 
-    <div class="account-page">
+      </div> 
+    
+        <button class="navbar-toggler ml-auto"   type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item col-12 col-lg-auto">
+              <a class="nav-link text-white btn-outline-dark rounded-pill text-center"  href="user">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item col-12 col-lg-auto">
+              <a class="nav-link text-white btn-outline-dark rounded-pill text-center " href="shop">Shop</a>
+            </li>                
+           
+            <li class="nav-item col-12 col-lg-auto">
+              <a class="nav-link text-white btn-outline-dark rounded-pill text-center" href="login">Sign Up/Login</a>
+            </li>
+        
+          
+       
+       <li class="nav-item col-12 col-lg-auto">
+        <a href="cart" class="nav-link text-white  text-center"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+                 
+</ul>
+          
+       </div>
+    </div>
+ </nav>
+</section>
+
+    <div class="account-page" style="padding-top: 200px;">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 col-12">

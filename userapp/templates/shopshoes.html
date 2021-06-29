@@ -1,0 +1,101 @@
+{% extends 'shopbase.html' %}
+{% load static %}
+{% block content %}
+
+
+<section id="featured" class="my-5 py-5">
+  <div class="container mt-5 py-5 pb-5">
+    <h2>Running Shoes</h2>
+    <hr>
+    <p>Here you can check out our new produtcs</p>
+    
+  </div>
+  <div class="row mx-auto container">
+   
+    <div  onclick="window.location.href='shopprod3';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/png (2).jfif.png' %}" class="img-fluid mb-3 pb-1" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <small>Puma</small>
+      <h5 class="p-name">Shoe</h5>
+      <h4 class="p-price">1999.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+    <div onclick="window.location.href='shopprod4';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/floatride-energy-grow-mens-running-shoes (1).jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <small>Reebok</small>
+      <h5 class="p-name">Shoe</h5>
+      <h4 class="p-price">1899.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+
+    
+  
+
+    <div onclick="window.location.href='shopprod20';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/derer.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <small>Nike</small>
+      <h5 class="p-name">Shoe</h5>
+      <h4 class="p-price">2999.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+    <div onclick="window.location.href='shopprod21';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/dsfdsf.jpg' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <small>Nike</small>
+      <h5 class="p-name">Shoe</h5>
+      <h4 class="p-price">1299.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+    <div onclick="window.location.href='shopprod22';" class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'images/gtgtg.png' %}" class="img-fluid mb-3" alt="" srcset="">
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <small>Nike</small>
+      <h5 class="p-name">Shoe</h5>
+      <h4 class="p-price">1299.00</h4>
+      <button type="button" class="btn btn-dark btn-outline-warning">BUY NOW</button>
+    </div>
+  
+    
+    
+   
+   
+ 
+    
+
+
+  </div>
+</section>
+
+{% endblock %}

@@ -82,4 +82,36 @@ def shopprod30(request):
 def shopprod31(request):
  return render(request,'shopprod31.html') 
 def shopprod32(request):
- return render(request,'shopprod32.html')  
+ return render(request,'shopprod32.html') 
+def shopshoes(request):
+ return render(request,'shopshoes.html') 
+def shopmensfash(request):
+ return render(request,'shopmensfash.html') 
+def shopwatches(request):
+ return render(request,'shopwatches.html')
+def shopexe(request):
+ return render(request,'shopexe.html') 
+def shopshirts(request):
+ return render(request,'shopshirts.html') 
+def shopjeans(request):
+ return render(request,'shopjeans.html') 
+def shoptshirt(request):
+ return render(request,'shoptshirt.html')
+def shopsmartwatches(request):
+ return render(request,'shopsmartwatches.html') 
+def shophoodies(request):
+ return render(request,'shophoodies.html')
+def shopcasualshoes(request):
+ return render(request,'shopcasualshoes.html') 
+def shopbasenavtest(request):
+ return render(request,'shopbasenavtest.html') 
+def editprofile(request):
+ return render(request,'editprofile.html') 
+def checkout(request):
+ return render(request,'checkout.html')
+def payment(request):
+ return render(request,'payment.html')
+def paymentcomplete(request):
+ return render(request,'paymentcomplete.html')
+def paymentfail(request):
+ return render(request,'paymentfail.html')
