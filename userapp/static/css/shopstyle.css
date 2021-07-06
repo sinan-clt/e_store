@@ -60,7 +60,7 @@ hr{
 .navbar{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
-   
+    box-shadow: rgb(73, 72, 72) 0px 10px 20px -7px;
 /*     box-shadow: 0 5px 100px rgba(0, 0, 0, 0.7);
      */
     
