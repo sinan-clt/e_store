@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
+from . models import signupp,loggin
 
 # Create your views here.
 
@@ -9,8 +10,38 @@ def shop(request):
  return render(request,'shop.html') 
 def shopprod1(request):
  return render(request,'shopprod1.html') 
+
+def signup(request):
+
+    try:
+        user=request.POST['user_name']
+        user_exist=loggin.objects.filter(username=user).exists()
+
+        if user_exist==False:
+            fname=request.POST['first_name']
+            print(fname)
+            lname=request.POST['last_name']
+            email=request.POST['email']
+            mobile=request.POST['mobile_number']
+
+            passwordd=request.POST['confrm_pass']
+
+            signupObj=signupp(firstname=fname,lastname=lname,email=email,mobilenumber=mobile)
+            signupObj.save()
+
+            loginObj=loggin(username=user,password=passwordd,user_id_id=signupObj.id)
+            loginObj.save()
+
+            return render(request,'signup.html',{"message1":"user registered"}) 
+        return render(request,'signup.html',{"message2":"username already exist"}) 
+
+    except Exception as e:
+      print(e)
+    return render(request,'signup.html') 
+
 def login(request):
  return render(request,'login.html') 
+
 def profile(request):
  return render(request,'profile.html') 
 def cart(request):

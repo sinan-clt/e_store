@@ -25,10 +25,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 " >
             <li class="nav-item col-lg-auto">
-              <a class="nav-link  text-white text-center btn-outline-dark  rounded-pill " aria-current="page" href="/user/">Home</a>
+              <a class="nav-link  text-white text-center btn-outline-dark  rounded-pill " aria-current="page" href="user">Home</a>
             </li>
             <li class="nav-item col-lg-auto">
-              <a class="nav-link  text-white text-center btn-outline-dark  rounded-pill" aria-current="page" href="/shop/">Shop</a>
+              <a class="nav-link  text-white text-center btn-outline-dark  rounded-pill" aria-current="page" href="shop">Shop</a>
             </li>
             
           </ul>
@@ -39,31 +39,50 @@
 
 
 
-    <section style="margin-top: 70px;">
-      <div class="container " id="log">
-        
-        <div class="user signinBx">
-          <div class="imgBx"><img src="{% static 'images/breathtaking-online-shopping-statistics-you-never-knew.png' %}" alt="" ></div>
-          <div class="formBx">
-            <form action="/login/" method="POST">
-              {% csrf_token %}
-              <h2>Sign In</h2>
-              <input type="text" name="" placeholder="Username" >
-              <input type="password" name="" placeholder="Password" >
-              <input type="submit" name="" value="Login" >
-              <p class="signup">
-                Don't have an account ?
-                <a href="/signup/">Sign Up.</a>
-              </p>
-            </form>
+ <section style="margin-top: 70px;">
+    <div class="container " id="log">
+
+   <div class="user signinBx">
+    <div class="formBx" >
+        <form action="/signup/" method="POST" name="change">
+          {% csrf_token %}
+          <h2>Create an account</h2>
+          
+          <input type="text" name="first_name" placeholder="Firstname" >
+          <input type="text" name="last_name" placeholder="Lastname" >
+          <input type="text" name="user_name" placeholder="Username" >
+          <input type="text" name="email" placeholder="Email Address" >
+          <input type="text" name="mobile_number" placeholder="Mobile Number" >
+          <input type="password" name="new_pass" id="newpass" placeholder="Create Password">
+          <input type="password" name="confrm_pass" placeholder="Confirm Password" >
+          <input type="submit" name="" value="Sign Up" >
+
+          <div style="color: green;">
+              {{message1}}
           </div>
+
+          <div style="color: red;">
+            {{message2}}
         </div>
 
+          <p class="signup">
+            Already have an account ?
+            <a href="/login/">Sign in.</a>
+          </p>
 
+        </form>
       </div>
-    </section>
 
-    
+      <div class="imgBx"><img src="{% static 'images/1_iAu65xDmvpVdBJgps6EDEw.png' %}" alt="" ></div>
+    </div>
+    </div>
+
+          
+
+  </div>
+  </section>
+
+  
   <footer class=" py-2" id="foote">
     <div class="row container mx-auto pt-5">
       <div class="footer-one col-lg-3 col-md-6 col-12">

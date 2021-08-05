@@ -1,0 +1,194 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="icon" href="{% static 'images/5e7396f0ff0f8e1c1d4a0f3c_Shopify (1).png' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}">
+    
+</head>
+<body>
+
+  <section>
+     <nav class="navbar navbar-expand-lg navbar-light  bg-secondary  fixed-top ">
+      <div class="container-fluid">
+    <a href="user">  <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %}" width="185"   class="p-1"></a> 
+        
+
+    
+        <button class="navbar-toggler ml-auto"   type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+          <ul class="navbar-nav ml-auto p-3">
+            <li class="nav-item col-12 col-lg-auto">
+              <a class="nav-link text-white btn-outline-dark rounded-pill text-center"  href="user">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item col-12 col-lg-auto">
+              <a class="nav-link text-white btn-outline-dark rounded-pill text-center " href="shop">Shop</a>
+            </li>                
+           
+            <li class="nav-item col-12 col-lg-auto">
+              <a class="nav-link text-white btn-outline-dark rounded-pill text-center" href="login">Sign Up/Login</a>
+            </li>
+        
+          
+       
+       <li class="nav-item col-12 col-lg-auto">
+        <a href="cart" class="nav-link text-white  text-center"><i class="fas fa-shopping-bag"></i></a>
+        </li>
+                 
+</ul>
+          
+       </div>
+    </div>
+ </nav>
+</section>
+
+    <div class="account-page" style="padding-top: 110px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <img src="{% static 'images/facebook_shop.png' %}" alt="" srcset="" width="100%">
+          </div>
+          
+          <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+           <div class="form-container">
+             <div class="form-btn">
+               <span onclick="login()">Login</span>
+               <span onclick="signup()">Sign Up</span>
+               <hr id="indicator">
+               <i class="fas fa-user-plus"></i>
+             </div>
+
+             <form action="" id="login">
+               <input type="text" placeholder="User name">
+               <input type="password" placeholder="Enter Password" name="psw" required>
+               <button type="submit" class="btn btn-dark ">Login</button>
+               
+               <a href="">Forgot Password?</a>
+             </form>
+
+             <form action="" id="signup">
+              <input type="text" placeholder="User name">
+              <input type="email" placeholder="Enter Email" name="email" required>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+              <button type="submit" class="btn btn-dark">Sign Up</button>
+              
+            </form>
+
+           </div>
+          </div>
+
+
+    </div>
+  </div>
+  </div>
+
+
+  <footer class=" py-2" id="foote">
+    <div class="row container mx-auto pt-5">
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <img src="{% static 'images/logggik.png' %}" alt="" srcset="" class="pb-4">
+        <p class="pt-3">shopify is a online shopping site for mens. Its an Indian e-commerce company, headquartered in Bangalore, Karnataka, India, and incorporated in Singapore as a private limited company.
+        </p>
+      </div>
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Featured</h5>
+        <ul class="text-uppercase list-unstyled">
+          <li><a href="shop">Mens</a></li>
+          <li><a href="shopmensfash">fashion</a></li>
+          <li><a href="shopwatches">watches</a></li>
+          <li><a href="shopmensfash">cloths</a></li>
+          <li><a href="shoptshirt">T-shirts</a></li>
+          <li><a href="shopshoes">shoes</a></li>
+          <li><a href="shopexe">Executive</a></li>
+          <li><a href="shophoodies">Hoodies</a></li>
+        </ul>
+      </div>
+      <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+        <h5 class="pb-2">Contact Us</h5>
+        <div>
+          <h6 class="text-uppercase">Address</h6>
+          <p>123 STREET ,BANGALORE </p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">Phone</h6>
+          <p>+91 9605949378</p>
+        </div>
+        <div>
+          <h6 class="text-uppercase">email</h6>
+          <p>shopifymens@gmail.com</p>
+        </div>
+      </div>
+  
+      <div class="footer-one col-lg-3 col-md-6 col-12">
+        <h5 class="pb-2">CONTACT US THROUGH</h5>
+        <div class="row">
+          <i class="fab fa-instagram p-3"></i>
+          <i class="fab fa-facebook p-3"></i>
+          <i class="fab fa-twitter p-3"></i>
+          
+  
+          <div class="container pt-5">
+          
+          <img src="{% static 'images/payment.png' %}" alt="" srcset="">
+        </div>
+        
+  
+          </div>
+          
+      
+    </div>
+  
+    <div class="container" id="copyright">
+      <hr>
+      <div class="row">
+          <div class="col-md-12 col-lg-12 col-12">
+             
+              <p class="copyright"><i class="far fa-copyright"></i>&nbsp;COPYRIGHT 2021, ALL RIGHTS RESERVED</p>
+  
+              
+          </div>
+      </div>
+      </div>
+  
+  
+  
+  </footer>
+  
+      
+      <script>
+        var LoginForm = document.getElementById("login")
+        var RegForm = document.getElementById("signup")
+        var indicator = document.getElementById("indicator")
+        function login(){
+              RegForm.style.transform="translateX(300px)";
+              LoginForm.style.transform="translateX(300px)";
+              indicator.style.transform="translateX(0px)";
+            }
+            function signup(){
+              RegForm.style.transform="translateX(0px)";
+              LoginForm.style.transform="translateX(0px)";
+              indicator.style.transform="translateX(100px)";
+            }
+
+           
+
+
+
+      </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+          
+      </body>
+      </html>
