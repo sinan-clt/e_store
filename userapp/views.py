@@ -14,36 +14,100 @@ def shopprod1(request):
 def signup(request):
 
     try:
-        user=request.POST['user_name']
-        user_exist=loggin.objects.filter(username=user).exists()
+        
+        mobilenumber=request.POST['mobile_number']
+        user_exist=loggin.objects.filter(mobilenumber=mobilenumber).exists()
 
         if user_exist==False:
             fname=request.POST['first_name']
             print(fname)
             lname=request.POST['last_name']
+            user=request.POST['user_name']
             email=request.POST['email']
-            mobile=request.POST['mobile_number']
 
             passwordd=request.POST['confrm_pass']
 
-            signupObj=signupp(firstname=fname,lastname=lname,email=email,mobilenumber=mobile)
+            signupObj=signupp(firstname=fname,lastname=lname,username=user,email=email)
             signupObj.save()
 
-            loginObj=loggin(username=user,password=passwordd,user_id_id=signupObj.id)
+            loginObj=loggin(mobilenumber=mobilenumber,password=passwordd,user_id_id=signupObj.id)
             loginObj.save()
 
             return render(request,'signup.html',{"message1":"user registered"}) 
-        return render(request,'signup.html',{"message2":"username already exist"}) 
+        return render(request,'signup.html',{"message2":"user already exist"}) 
 
     except Exception as e:
       print(e)
     return render(request,'signup.html') 
 
 def login(request):
- return render(request,'login.html') 
+    if request.method=="POST":
+        mobilenumber=request.POST['login_user']
+        password=request.POST['user_password']
+        try:
+            user=loggin.objects.get(mobilenumber=mobilenumber,password=password)
+            if user.mobilenumber==mobilenumber and user.password==password:
+                request.session['user']=user.id
+                return redirect('shopafterlogin')
+            else:
+                return render(request,'login.html',{"message2":"Invalid Login Credentials"})
+        except loggin.DoesNotExist:
+            return render(request,'login.html',{"message2":"Invalid Login Credentials"})
+                
+    return render(request,'login.html')
+
+
+    # try:
+    #     if request.method=="POST":
+    #         mobilenumber=request.POST['login_user']
+    #         password=request.POST['user_password']
+    #         user=loggin.objects.get(mobilenumber=mobilenumber,password=password)
+    #         request.session['user']=user.id
+            
+    #         return render(request,'shopafterlogin.html')
+    #     else:
+    #         return render(request,'login.html')
+    
+        
+    # except Exception as e:
+    #     print(e)
+    # return render(request,'login.html',{"message2":"Invalid Login Credentials"}) 
 
 def profile(request):
- return render(request,'profile.html') 
+    try:
+        getvalues=request.session['user']
+        userObj=loggin.objects.get(id=getvalues)
+        regObj=signupp.objects.get(id=userObj.user_id_id)
+
+        return render(request,'profile.html',{"register":regObj,"user_login":userObj}) 
+    except Exception as e:
+        print(e)
+        return render(request,'profile.html') 
+
+def editprofile(request):
+    
+ return render(request,'editprofile.html') 
+
+
+def changepass(request):
+    try:
+        user_id=request.session['user']
+        user_obj=loggin.objects.get(id=user_id)
+
+        old=request.POST['curr_pass']
+        new=request.POST['new_pass']
+
+        if old==user_obj.password:
+            user_obj.password=new
+            user_obj.save()
+            return render(request,'changepass.html',{"mssg1":"Password Changed"})
+        else:
+            return render(request,'changepass.html',{"mssg2":"Password can't change"})
+
+    except Exception as e:
+        print(e)
+    return render(request,'changepass.html')
+
 def cart(request):
  return render(request,'cart.html')  
 def log(request):
@@ -136,8 +200,9 @@ def shopcasualshoes(request):
  return render(request,'shopcasualshoes.html') 
 def shopbasenavtest(request):
  return render(request,'shopbasenavtest.html') 
-def editprofile(request):
- return render(request,'editprofile.html') 
+def shopafterlogin(request):
+ return render(request,'shopafterlogin.html') 
+
 def checkout(request):
  return render(request,'checkout.html')
 def payment(request):

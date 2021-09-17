@@ -7,18 +7,18 @@
 
 
 <div class="container " style="height:500px; width: 100%;">
-    <form class="form bg-transparent mb-2" action="" method="POST" style="font-weight: 600; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-
+    <form class="form bg-transparent mb-2" action="/addbrand/" method="POST" style="font-weight: 600; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+      {% csrf_token %}
 
         <div class="form-group p-5 m-auto">
           <label class="control-label col-sm-2">Brand name:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control">
+            <input type="text" name="addbrand" class="form-control">
           </div>
         </div> 
 
 
-        <a href=""> <button type="button" class="btn btn-primary mb-3 " style="margin-left: 65px;">Add </button></a>  
+        <a href=""> <button type="submit" class="btn btn-primary mb-3 " style="margin-left: 65px;">Add </button></a>  
 
           
          </form>

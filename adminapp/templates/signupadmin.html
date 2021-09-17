@@ -57,8 +57,8 @@
 <div class="container login" style="padding-top: 40px; padding-bottom: 40px;">
 	<h3 style="color: white;">Sign Up</h3>
 	
-	<form action="" class="" name="signup" style="border:1px solid rgb(107, 75, 75); background-color: silver; border-radius: 10px; ">
-
+	<form action="/signupadmin/" method="POST" class="" name="signup" style="border:1px solid rgb(107, 75, 75); background-color: silver; border-radius: 10px; ">
+    {% csrf_token %}
 		<div class="container p-2">
 
 			<label><b>User name</b></label>
@@ -74,11 +74,18 @@
             <label><b>Confirm Password</b></label>
              <input type="password" placeholder="Repeat Password" name="password_confirm" style="border: 1px solid rgb(68, 64, 64); border-radius:5px  ;width: 100%; padding: 12px 20px;margin: 8px 0;">
 
+             <div style="color: green;">
+              {{message1}}
+          </div>
+
+          <div style="color: red;">
+            {{message2}}
+        </div>
 
 
              <div class="">
 			
-                <button type="submit" class="btn-lg btn-success mt-1 ml-2 mr-2" value="submit">Sign Up</button><a href="loginadmin">Login here</a> 
+                <button type="submit" class="btn-lg btn-success mt-1 ml-2 mr-2" value="submit">Sign Up</button><a href="/loginadmin/">Login here</a> 
 			</div>
            
            

@@ -14,216 +14,26 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">id</th>
-            
             <th scope="col">Brands</th>
             <th scope="col">Edit/Delete</th>
           </tr>
         </thead>
+        {% for brand in brands %}
         <tbody>
           <tr>
-            <th scope="row">001</th>
-            <td>CINDRELLA</td>
+            <th scope="row">{{brand.id}}</th>
+            <td>{{brand.brand_names}}</td>
             <td>
-           <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
+           <a href="/viewsingledata/{{brand.id}}"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
 
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            <a href="/deleteuser/{{brand.id}}" onclick="return confirm ('Are You Sure ?')">  <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
         </td>
           </tr>
 
-          <tr>
-            <th scope="row">002</th>
-            <td>LEVI'S</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-    
-          </tr>
-          <tr>
-            <th scope="row">003</th>
-            <td>ALLEN SOLLY</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">004</th>
-            <td>ADIDAS</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">005</th>
-            <td>NIKE</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">006</th>
-            <td>H&M</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">007</th>
-            <td>ROADSTER</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">008</th>
-            <td>LEE</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">009</th>
-            <td>APPLE</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">010</th>
-            <td>REEBOK</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">011</th>
-            <td>PUMA</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">012</th>
-            <td>NOISE</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">013</th>
-            <td>KARLIN</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">014</th>
-            <td>U.S POLO ASSN</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">015</th>
-            <td>SONATA</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">016</th>
-            <td>PETER ENGLAND</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">017</th>
-            <td>ALAN JONES</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">018</th>
-            <td>FASTRACK</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">019</th>
-            <td>AERO</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-          <tr>
-            <th scope="row">020</th>
-            <td>LOUIS VUITTON</td>
-            <td>
-              <a href="editbrand"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
-
-
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        </td>
-          </tr>
-
+          {% endfor %}
         </tbody>
       </table>
-  <a href="addbrand"> <button type="button" value="" class="btn btn-primary mb-5 mt-3">Add Brand</button></a>  
+  <a href="/addbrand/"> <button type="button" value="" class="btn btn-primary mb-5 mt-3">Add Brand</button></a>  
   
 </div>
 

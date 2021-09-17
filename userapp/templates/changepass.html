@@ -1,0 +1,119 @@
+{% extends 'shopbasenavtest.html' %}
+
+{% load static %}
+{% block content %}
+
+
+
+<style>
+    .error{ 
+      color:rgb(214, 28, 28);
+     }
+  </style>
+  
+  <div class="container mb-3 text-left" style="margin-top: 180px;">
+    <h5 class="container">Change Password:</h5>
+  </div>
+  
+  <div class="container mt-4 bg-light">
+  
+  
+      
+    <form class="form bg-transparent mb-2 " name="change" action="/changepass/" method="POST" style="font-weight: 600;">
+      {% csrf_token %}
+   
+        <div class="form-group">
+          <label class="control-label col-sm-3">Current Password:</label>
+          <div class="col-md-8">
+            <input type="text" name="curr_pass" id="Password" class="form-control">
+          </div>
+        </div> 
+  
+    
+
+        <div class="form-group">
+            <label class="control-label col-sm-3">New Password:</label>
+            <div class="col-md-8">
+              <input type="password" name="new_pass"  id="newpass" class="form-control">
+            </div>
+          </div> 
+  
+          <div class="form-group">
+            <label class="control-label col-sm-3">Confirm New Password:</label>
+            <div class="col-md-8">
+              <input type="password" name="confrm_pass" id="confrmpass"  class="form-control">
+            </div>
+          </div> 
+  
+          <div class="col-sm-10 pt-3 pb-5">
+          <button onclick="sub()" type="submit" class="btn btn-primary" name="" value="submit">EDIT</button>
+          
+          <div style="color: green;">
+            {{mssg1}}
+          </div>
+          <div style="color: red;">
+            {{mssg2}}
+          </div>
+        </div>
+         </form>
+  
+  
+  </div>
+  <script>
+    // function sub(){
+    // newpass=document.getElementById('newpass').value
+    // password=document.getElementById('confrmpass').value
+    
+    // if (newpass==password) {
+    //     alert("password is same")
+    
+        
+    // }
+    // else {
+    //     alert("password doesn't match")
+    // }
+
+    // }
+
+    $(function(){
+        $("form[name='change']").validate({
+            rules:{
+               
+                new_pass: {
+                 required: true,
+                 minlength: 5
+               },
+               confrm_pass: {
+               required: true,
+               
+               equalTo: '#newpass'
+                },
+
+
+            },
+
+
+            messages:{
+            
+              new_pass:{
+                required:"please enter your new password",
+                minlength:"enter atleast 5 characters"
+             },
+             confrm_pass:{
+                required:"please confirm your new password",
+                
+             },
+            },
+            
+            submitHandler:function(form){
+                form.submit();
+            }
+
+           
+        })
+    })
+
+</script>
+
+
+{% endblock %}

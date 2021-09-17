@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'images/5e7396f0ff0f8e1c1d4a0f3c_Shopify (1).png' %}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{% static 'css/login2.css' %}">
     <title>login</title>
@@ -17,8 +18,8 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary fixed-top">
-      <div class="container-fluid">
-        <a href="user">  <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %}" width="185"   class="p-1"></a> 
+      <div class="container">
+        <a href="/user/">  <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %}" width="185"   class="p-1"></a> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,12 +46,16 @@
         <div class="user signinBx">
           <div class="imgBx"><img src="{% static 'images/breathtaking-online-shopping-statistics-you-never-knew.png' %}" alt="" ></div>
           <div class="formBx">
-            <form action="/login/" method="POST">
+            <form action="/login/" name="log" method="POST">
               {% csrf_token %}
               <h2>Sign In</h2>
-              <input type="text" name="" placeholder="Username" >
-              <input type="password" name="" placeholder="Password" >
+              <input type="text" name="login_user" placeholder="Mobile number" >
+              <input type="password" name="user_password" placeholder="Password" >
               <input type="submit" name="" value="Login" >
+              <div style="color: red;">
+                {{message2}}
+              </div>
+             
               <p class="signup">
                 Don't have an account ?
                 <a href="/signup/">Sign Up.</a>
@@ -142,17 +147,16 @@
 };
 
 $(function(){
-        $("form[name='change']").validate({
+        $("form[name='log']").validate({
             rules:{
                
-                new_pass: {
+                login_user: {
                  required: true,
-                 minlength: 5
+                 
                },
-               confrm_pass: {
-               required: true,
-               
-               equalTo: '#newpass'
+               user_password: {
+                 required:true,
+  
                 },
 
 
@@ -161,12 +165,12 @@ $(function(){
 
             messages:{
             
-              new_pass:{
-                required:"please enter your new password",
-                minlength:"enter atleast 5 characters"
+              login_user:{
+                required:"please enter a valid mobile number",
+               
              },
-             confrm_pass:{
-                required:"please confirm your new password",
+             user_password:{
+                required:"please enter your password",
                 
              },
             },

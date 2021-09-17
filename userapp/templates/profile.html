@@ -80,44 +80,37 @@
     <img src="{% static 'images/unnamed.png' %}" style="height: 200px; width: 200px;" alt="" srcset="" 
     class="rounded-circle mx-auto d-block mt-3">
         
-  <table class="table table-striped  ">
+  <table class="table table-striped ">
     <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Personal Details</h2><br>
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <td>Ashik</td>
-      
-      </tr>
-    </thead>
     <tbody>
       <tr>
+        <th>First Name</th>
+        <td>{{register.firstname}}</td>
+      
+      </tr>
+   
+    
+      <tr>
         <th>Last Name</th>
-        <td>Ahammed</td>
+        <td>{{register.lastname}}</td>
       </tr>
       <tr>
-        <th>Gender</th>
-        <td>male</td>
-      </tr>
-      <tr>
-        <th>Date of Birth</th>
-        <td>Nov 25, 1998</td>
-      </tr>
-      <tr>
-        <th>Mobile</th>
-        <td>995742369</td>
+        <th>User Name</th>
+        <td>{{register.username}}</td>
       </tr>
       <tr>
         <th>Email</th>
-        <td>ashikahammed@gmail.com</td>
+        <td>{{register.email}}</td>
       </tr>
       <tr>
-        <th>Address</th>
-        <td>Cochin</td>
+        <th>Mobile Number</th>
+        <td>{{user_login.mobilenumber}}</td>
       </tr>
       <tr>
-        <th>Country</th>
-        <td>India</td>
+        <th>Password</th>
+       <th>*****{{user_login.password}}**** <br><a href="/changepass/" style="text-decoration: none;">Change password ?</a></th>
       </tr>
+     
       
     </tbody>
   </table>
@@ -127,7 +120,7 @@
 
 
     <div class="text-center">
-    <a href="editprofile">  <button type="button" class="btn  btn-outline-primary">EDIT PROFILE</button></a>
+    <a href="/editprofile/">  <button type="button" class="btn  btn-outline-primary">EDIT PROFILE</button></a>
     </div>
 
   </div>
