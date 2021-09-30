@@ -15,21 +15,23 @@
 
 <div class="container">
     <div class="card mb-3">
-        <img class="card-img-top img-sm" src="{% static 'images/Smart-Watc_2000x.jpg' %}" alt="Card image cap">
+      {% for banr in data %}
+        <img class="card-img-top img-sm" src="/adminapp/media/{{banr.banner_image}}" alt="Card image cap">
+
         <div class="card-body">
           <h5 class="card-title">Banner text:</h5>
-          <p class="card-text">Smart watches
-            up to 50% off</p>
+          <p class="card-text"><b>{{banr.banner_text}}</b></p>
           
           <div class="container footer text-right">
-            <a href="editbanner">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+            <a href="/viewbannerdata/{{banr.id}}"> <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
         
-            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+            <a href="/deletebanner/{{banr.id}}" onclick="return confirm ('Are you sure?')">   <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+            
             </div>
-       
+  
         </div>
       </div>
-      
+           {% endfor %}
     
 </div>
 

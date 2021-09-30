@@ -55,16 +55,19 @@ urlpatterns = [
     path('shopcasualshoes/',views.shopcasualshoes,name='shopcasualshoes'),
     path('shopbasenavtest/',views.shopbasenavtest,name='shopbasenavtest'),
     path('shopafterlogin/',views.shopafterlogin,name='shopafterlogin'),
-    path('editprofile/',views.editprofile,name='editprofile'),
+    
     path('changepass/',views.changepass,name='changepass'),
     path('checkout/',views.checkout,name='checkout'),
     path('payment',views.payment,name='payment'),
     path('paymentcomplete/',views.paymentcomplete,name='paymentcomplete'),
     path('paymentfail/',views.paymentfail,name='paymentfail'),
-    
+
+    # path('editprofile/',views.editprofile,name='editprofile'),
     
 
+    path('viewsingledata/<int:id>',views.viewsingledata,name='viewsingledata'),
 
+    path('update/<int:id>',views.update,name='update'),
 
     
 ]

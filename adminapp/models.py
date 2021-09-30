@@ -25,3 +25,8 @@ class category(models.Model):
 class sliderr(models.Model):
     text=models.CharField(max_length=100)
     image=models.CharField(max_length=500)
+
+
+class bannerr(models.Model):
+    banner_text=models.CharField(max_length=100)
+    banner_image=models.CharField(max_length=500)

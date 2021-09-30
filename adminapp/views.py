@@ -2,7 +2,7 @@ from django.db import reset_queries
 from django.shortcuts import redirect, render
 from random import random
 from django.http import HttpResponse
-from . models import signup,login,brand,sliderr
+from . models import *
 from django.core.files.storage import FileSystemStorage
 
 # Create your views here.
@@ -14,16 +14,19 @@ def admindashboard(request):
 
 def brands(request):
     brands=brand.objects.all()
-
     return render(request,'brands.html',{"brands":brands})
 
 def addbrand(request):
-    if request.method=='POST':
+    try:
         brands=request.POST['addbrand']
-        obj=brand(brand_names=brands)
-        obj.save()
-        return redirect('brands')
-
+        brandexist=brand.objects.filter(brand_names=brands).exists()
+        if brandexist==False:
+            obj=brand(brand_names=brands)
+            obj.save()
+            return redirect('brands')
+        return render(request,'addbrand.html',{"message":"brand already exist"})
+    except Exception as e:
+        print(e)
     return render(request,'addbrand.html')
 
 def viewdata(request,id):
@@ -34,22 +37,53 @@ def update(request,id):
     if request.method=='POST':
         brands=request.POST['brand']
         brand.objects.filter(id=id).update(brand_names=brands)
-      
         return redirect('brands')
 
 def delete(request,id):
     brand.objects.get(id=id).delete()
     return redirect('brands')
 
-def category(request):
- return render(request,'category.html')
+def categoryy(request):
+    brands=brand.objects.all()
+    categoris=category.objects.all()
+    return render(request,'category.html',{"brands":brands,"categr":categoris})
+ 
 
 def addcategory(request):
- return render(request,'addcategory.html')
+    brands=brand.objects.all()
+    if request.method=='POST':
+        categorie=request.POST['addcategory']
+        brandss=request.POST['brands']
+        obj=brand(brand_names=brandss)
+        obj.save()
+        obj1=category(categories=categorie,brand_category_id_id=obj.id)
+        obj1.save()
+        return redirect('categoryy')
+    return render(request,'addcategory.html',{"brands":brands})
 
+
+
+def viewcategorydata(request,id):
+    singleObj=category.objects.get(id=id)
+    brnds=brand.objects.all()
+
+    return render(request,'editcategory.html',{"data":singleObj,"brndd":brnds})
+
+def updatecategory(request,id):
+    if request.method=='POST':
+        brandw=request.POST['brande']
+        categoris=request.POST['category']
+        brand.objects.filter(id=id).update(brand_names=brandw)
+        category.objects.filter(id=id).update(categories=categoris)
+        return redirect('categoryy')
+
+def deletecategory(request,id):
+    category.objects.get(id=id).delete()
+    return redirect('categoryy')
 
 def addprod(request):
- return render(request,'addprod.html')
+
+    return render(request,'addprod.html')
 
 
 
@@ -107,10 +141,9 @@ def editbrand(request):
  return render(request,'editbrand.html')
 def editcategory(request):
  return render(request,'editcategory.html')
+
 def slider(request):
     obj4=sliderr.objects.all()
-    
-
     return render(request,'slider.html',{"data":obj4})
  
 
@@ -130,15 +163,80 @@ def addslider(request):
 
         pro=sliderr(text=textt,image=image_name)
         pro.save()
+        return render(request,'addslider.html',{"message":"slider added successfully"})
 
     return render(request,'addslider.html')
 
+def viewsliderdata(request,id):
+    singleobj=sliderr.objects.get(id=id)
+    return render(request,'editslider.html',{"data":singleobj})
+    
+def updateslider(request,id):
+    if request.method=='POST':
+        slider_text=request.POST['slidertext']
+        sliderimg=request.FILES['sliderimagee']
+
+        imagename=str(random())+sliderimg.name
+        print(imagename)
+
+        obj=FileSystemStorage()
+        obj.save(imagename,sliderimg)
+
+        sliderr.objects.filter(id=id).update(text=slider_text,image=imagename)
+        return redirect('slider')
+
+
+def deleteslider(request,id):
+    sliderr.objects.get(id=id).delete()
+    return redirect('slider')
+
 def editslider(request):
  return render(request,'editslider.html')
+
 def banner(request):
- return render(request,'banner.html')
+    obj=bannerr.objects.all()
+
+    return render(request,'banner.html',{"data":obj})
+
 def addbanner(request):
- return render(request,'addbanner.html')
+    if request.method=='POST':
+        bannertext=request.POST['bannerrtext']
+        bannerimage=request.FILES['bannerrimage']
+
+        imgname=str(random())+bannerimage.name
+        print(imgname)
+
+        obj3=FileSystemStorage()
+        obj3.save(imgname,bannerimage)
+
+        banr=bannerr(banner_text=bannertext,banner_image=imgname)
+        banr.save()
+
+        return render(request,'addbanner.html',{"message":"banner added succesfully"})
+    return render(request,'addbanner.html')
+
+def viewbannerdata(request,id):
+    singleObj=bannerr.objects.get(id=id)
+    return render(request,'editbanner.html',{"data":singleObj})
+
+def updatebanner(request,id):
+    if request.method=='POST':
+        bannertext=request.POST['bannerrtext']
+        bannerimage=request.FILES['bannerrimage']
+
+        imagename=str(random())+bannerimage.name
+
+        obj=FileSystemStorage()
+        obj.save()
+
+        bannerr.objects.filter(id=id).update(banner_text=bannertext,banner_image=bannerimage)
+        return redirect('banner')
+
+def deletebanner(request,id):
+    bannerr.objects.get(id=id).delete()
+    return redirect('banner')
+
+
 def editbanner(request):
  return render(request,'editbanner.html')
 def orders(request):

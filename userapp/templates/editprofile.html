@@ -75,34 +75,37 @@
    </nav>
 </section>
 <h5 class="container" style="padding-top: 185px;">Edit Your Profile:</h5>
-<form class="container mt-5 bg-light">
+
+<form action="/update/{{datas.id}}" method="POST" class="container mt-5 bg-light">
+  {% csrf_token %}
+
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="">First name</label>
-        <input type="text" class="form-control" id="">
+        <input type="text" class="form-control" name="fname" id="" value="{{datas.firstname}}">
       </div>
       <div class="form-group col-md-6">
         <label for="">Last name</label>
-        <input type="text" class="form-control" id="">
+        <input type="text" class="form-control" name="lname" id="" value="{{datas.lastname}}">
       </div>
     </div>
     
     <div class="form-group">
       <label for="">User name</label>
-      <input type="text" class="form-control" id="" placeholder="">
+      <input type="text" class="form-control" id="" name="uname" placeholder="" value="{{datas.username}}">
     </div>
     <div class="form-group ">
       <label for="">Email</label>
-      <input type="email" class="form-control" id="">
+      <input type="email" class="form-control" id=""  name="email" value="{{datas.email}}">
     </div>
       <div class="form-group ">
         <label for="">Mobile number</label>
-        <input type="number" class="form-control" id="">
+        <input type="number" class="form-control" id="" name="mobile" value="{{u_datas.mobilenumber}}">
       </div>
      
     
      
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+   <button type="submit" class="btn btn-primary">Save Changes</button>
   </form>
 
 <footer class="mt-5 py-3" id="foote">

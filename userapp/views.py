@@ -20,7 +20,6 @@ def signup(request):
 
         if user_exist==False:
             fname=request.POST['first_name']
-            print(fname)
             lname=request.POST['last_name']
             user=request.POST['user_name']
             email=request.POST['email']
@@ -84,10 +83,35 @@ def profile(request):
         print(e)
         return render(request,'profile.html') 
 
-def editprofile(request):
-    
- return render(request,'editprofile.html') 
+# def editprofile(request):
+#     try:
+#         values=request.session['user']
+#         datas=loggin.objects.get(id=values)
+#         signup=signupp.objects.get(id=datas.user_id_id)
 
+#         return render(request,'editprofile.html',{"user_data":signup,"user_login":datas}) 
+#     except Exception as e:
+#         print(e)
+#         return render(request,'editprofile.html') 
+
+def viewsingledata(request,id):
+    
+    signup_datas=signupp.objects.get(id=id)
+    login_datas=loggin.objects.get(id=id)
+    return render(request,'editprofile.html',{"datas":signup_datas,"u_datas":login_datas}) 
+
+def update(request,id):
+    if request.method=='POST':
+        firstname=request.POST['fname']
+        lastname=request.POST['lname']
+        username=request.POST['uname']
+        email=request.POST['email']
+
+        mobile=request.POST['mobile'] 
+
+        signupp.objects.filter(id=id).update(firstname=firstname,lastname=lastname,username=username,email=email)
+        loggin.objects.filter(id=id).update(mobilenumber=mobile)
+        return redirect('profile')
 
 def changepass(request):
     try:

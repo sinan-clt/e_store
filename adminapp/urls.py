@@ -7,7 +7,7 @@ urlpatterns = [
     path('brands/',views.brands,name='brands'),
     path('addprod/',views.addprod,name='addprod'),
     path('addbrand/',views.addbrand,name='addbrand'),
-    path('category/',views.category,name='category'),
+    path('categoryy/',views.categoryy,name='categoryy'),
     path('addcategory/',views.addcategory,name='addcategory'),
     path('loginadmin/',views.loginadmin,name='loginadmin'),
     path('signupadmin/',views.signupadmin,name='signupadmin'),
@@ -28,12 +28,22 @@ urlpatterns = [
     path('editbanner/',views.editbanner,name='editbanner'),
     path('orders/',views.orders,name='orders'),
     path('adddiscount/',views.adddiscount,name='adddiscount'),
-    path('viewsingledata/<int:id>',views.viewdata,name='viewdata'),
-    path('update/<int:id>',views.update,name='update'),
+
+    path('viewsingledataa/<int:id>',views.viewdata,name='viewdata'),
+    path('updatee/<int:id>',views.update,name='update'),
     path('deleteuser/<int:id>',views.delete,name='delete'),
     
 
+    path('viewcategorydata/<int:id>',views.viewcategorydata,name='viewcategorydata'),
+    path('updatecategory/<int:id>',views.updatecategory,name='updatecategory'),
+    path('deletecategory/<int:id>',views.deletecategory,name='deletecategory'),
 
-    
-    
+    path('viewsliderdata/<int:id>',views.viewsliderdata,name='viewsliderdata'),
+    path('updateslider/<int:id>',views.updateslider,name='updateslider'),
+    path('deleteslider/<int:id>',views.deleteslider,name='deleteslider'),
+
+    path('viewbannerdata/<int:id>',views.viewbannerdata,name='viewbannerdata'),
+    path('updatebanner/<int:id>',views.updatebanner,name='updatebanner'),
+    path('deletebanner/<int:id>',views.deletebanner,name='deletebanner'),
+
 ]

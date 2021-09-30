@@ -7,36 +7,18 @@
 
 
 <div class="container " style="height:500px; width: 100%;">
-    <form class="form bg-transparent mb-2" action="" method="POST" style="font-weight: 600; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-
+    <form class="form bg-transparent mb-2" action="/updatecategory/{{data.id}}" method="POST" style="font-weight: 600; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+      {% csrf_token %}
 
         <div class="form-group p-5 m-auto">
 
         <div class="form-group">
             <label class="control-label col-sm-2">Brand:</label>
             <div class="col-sm-3">
-            <select class="form-control" >
-                <option>Select Brand</option>
-              <option>LEVI'S</option>
-              <option>ADIDAS</option>
-              <option>NIKE</option>
-              <option>ALLEN SOLLY</option>
-              <option>CINDRELLA</option>
-              <option>H&M</option>
-              <option value="">ROADSTER</option>
-              <option value="">LEE</option>
-              <option value="">APPLE</option>
-              <option value="">REEBOK</option>
-              <option value="">PUMA</option>
-              <option value="">NOISE</option>
-              <option value="">KARLIN</option>
-              <option value="">LOUIS VUITTON</option>
-              <option value="">U.S POLO ASSN</option>
-              <option value="">SONATA</option>
-              <option value="">PETER ENGLAND</option>
-              <option value="">ALAN JONES</option>
-              <option value="">FASTRACK</option>
-              <option value="">AERO</option>
+            <select class="form-control" name="brande">
+              {% for brand in brndd %}
+                <option>{{brand.brand_names}}</option>
+                {% endfor %}
             
       
             </select>
@@ -46,12 +28,12 @@
 
           <label class="control-label col-sm-2">Category:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control">
+            <input type="text" name="category" class="form-control" value="{{data.categories}}">
           </div>
         </div> 
 
 
-        <a href=""> <button type="button" class="btn btn-primary mb-3 " style="margin-left: 65px;">EDIT </button></a>  
+        <a href=""> <button type="submit" class="btn btn-primary mb-3 " style="margin-left: 65px;">EDIT </button></a>  
 
           
          </form>
