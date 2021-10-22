@@ -5,7 +5,7 @@ urlpatterns = [
     path('adminbase/',views.adminbase,name='adminbase'),
     path('admindashboard/',views.admindashboard,name='admindashboard'),
     path('brands/',views.brands,name='brands'),
-    path('addprod/',views.addprod,name='addprod'),
+    path('addprodd/',views.addprodd,name='addprodd'),
     path('addbrand/',views.addbrand,name='addbrand'),
     path('categoryy/',views.categoryy,name='categoryy'),
     path('addcategory/',views.addcategory,name='addcategory'),
@@ -45,5 +45,24 @@ urlpatterns = [
     path('viewbannerdata/<int:id>',views.viewbannerdata,name='viewbannerdata'),
     path('updatebanner/<int:id>',views.updatebanner,name='updatebanner'),
     path('deletebanner/<int:id>',views.deletebanner,name='deletebanner'),
+
+    path('addfootwears/',views.addfootwears,name='addfootwears'),
+
+    path('viewproductdata/<int:id>',views.viewproductdata,name='viewproductdata'),
+    path('updateproduct/<int:id>',views.updateproduct,name='updateproduct'),
+    path('deleteproduct/<int:id>',views.deleteproduct,name='deleteproduct'),
+
+    path('changecate',views.changecate,name='changecate'),
+
+    path('addprodimages/',views.addprodimages,name='addprodimages'),
+
+    path('addimg',views.addimg,name='addimg'),
+    path('changeprod',views.changeprod,name='changeprod'),
+
+    path('viewprodslider/',views.viewprodslider,name='viewprodslider'),  
+
+    path('edtprod',views.edtprod,name='edtprod'),
+
+
 
 ]

@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
 
 <div class="container py-3 ml-4 mt-3 mb-3 text-left">
     <h3>Add Products</h3>
@@ -12,48 +14,25 @@
 
 
     
-    <form class="form bg-transparent mb-2" name="add" action="" method="" style="font-weight: 600;">
-
+    <form class="form bg-transparent mb-2" enctype="multipart/form-data" name="add" action="/addprodd/" method="POST" style="font-weight: 600;">
+      {% csrf_token %}
         <div class="form-group">
             <label class="control-label col-sm-2">Brand:</label>
             <div class="col-sm-3">
-            <select class="form-control" >
+            <select class="form-control" name="brand" id="brandd" onchange="changee()">
               <option>Select Brand</option>
-              <option>LEVI'S</option>
-              <option>ADIDAS</option>
-              <option>NIKE</option>
-              <option>ALLEN SOLLY</option>
-              <option>CINDRELLA</option>
-              <option>H&M</option>
-              <option value="">ROADSTER</option>
-              <option value="">LEE</option>
-              <option value="">APPLE</option>
-              <option value="">REEBOK</option>
-              <option value="">PUMA</option>
-              <option value="">NOISE</option>
-              <option value="">KARLIN</option>
-              <option value="">LOUIS VUITTON</option>
-              <option value="">U.S POLO ASSN</option>
-              <option value="">SONATA</option>
-              <option value="">PETER ENGLAND</option>
-              <option value="">ALAN JONES</option>
-              <option value="">FASTRACK</option>
-              <option value="">AERO</option>
+              {% for brnds in cate %}
+              <option value="{{brnds.id}}">{{brnds.brand_names}}</option>
+              {% endfor %}
+
             </select>
           </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-2">Category:</label>
             <div class="col-sm-3">
-            <select class="form-control" >
-                <option>Select Category</option>
-              <option>Shirt</option>
-              <option>Jeans</option>
-              <option>Shoe</option>
-              <option>T-shirt</option>
-              <option>Watch</option>
-              <option>Men's suits</option>
-              <option>Hoodies</option>
+            <select class="form-control" name="category" id="category">
+                <!-- <option>Select Category</option> -->
 
             </select>
 
@@ -63,35 +42,54 @@
         <div class="form-group">
           <label class="control-label col-sm-2">Product name:</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control">
+            <input type="text" name="prodname" class="form-control">
           </div>
         </div> 
 
         <div class="form-group">
             <label class="control-label col-sm-2">Description:</label>
             <div class="col-sm-8">
-            <textarea class="form-control" rows="6" ></textarea>
+            <textarea class="form-control" name="description" rows="6" ></textarea>
           </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-sm-2">Price:</label>
             <div class="col-sm-8">
-              <input type="number"  class="form-control">
+              <input type="number" name="price" class="form-control">
             </div>
           </div> 
 
+          <div class="form-group">
+            <label class="control-label col-sm-2">Discount:</label>
+            <div class="col-sm-8">
+              <input type="text" name="discount" class="form-control">
+            </div>
+          </div> 
+<!-- 
           <div class="form-group">
             <label class="control-label col-sm-2">Color:</label>
             <div class="col-sm-8">
               <input type="text"   class="form-control">
             </div>
-          </div> 
+          </div>  -->
 
 
           <div class="form-group">
             <label class="control-label col-sm-2">Size:</label>
-            <div class="col-sm-8">
+            <div class="col-sm-3">
+              <select class="form-control" name="size_dress">
+                  <option>Select size</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+  
+              </select>
+  
+            </div>
+            <!-- <div class="col-sm-8">
             <label class="checkbox-inline">
                 <input type="checkbox" value="">S
               </label>
@@ -104,49 +102,67 @@
               <label class="checkbox-inline ml-2">
                 <input type="checkbox" value="">XL
               </label>
-            </div>
+            </div> -->
           </div> 
 
 
       
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="control-label col-sm-2">Size (footwears):</label>
-            <div class="col-sm-8">
-            <label class="checkbox-inline">
-                <input type="checkbox" value="">6
-              </label>
-              <label class="checkbox-inline ml-2">
-                <input type="checkbox" value="">7
-              </label>
-              <label class="checkbox-inline ml-2">
-                <input type="checkbox" value="">8
-              </label>
-              <label class="checkbox-inline ml-2">
-                <input type="checkbox" value="">9
-              </label>
-              <label class="checkbox-inline ml-2">
-                <input type="checkbox" value="">10
-              </label>
-              <label class="checkbox-inline ml-2">
-                <input type="checkbox" value="">11
-              </label>
+            <div class="col-sm-3">
+              <select class="form-control" name="size_footwer">
+                  <option>Select size</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+  
+              </select>
+  
             </div>
-          </div> 
+          </div>  -->
 
 
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="control-label col-sm-2">Product images:</label>
             <div class="col-sm-8">
-                <input type="file" multiple>
+                <input type="file" name="prod_image" multiple>
                 
             </div>
-          </div> 
+          </div>  -->
           <div class="col-sm-10 pt-3 pb-5">
           <button type="submit" class="btn btn-primary" name="" value="submit">ADD PRODUCT</button>
+          <a href="/addfootwears/" class="">Add Footwears here</a>
+          <div>
+            {{message}}
+          </div>
           </div>
          </form>
 
 </div>
+
+<script>
+ $.ajaxSetup({
+ 	 		headers: { "X-CSRFToken": '{{csrf_token}}' }
+		});
+    function changee(){
+        $.ajax({
+            url:'/changecate',
+            type:'POST',
+            data:{
+                brandid : $('#brandd').val()
+            },
+            success:function(response){
+              console.log(response.dataitem)
+              $('.op').remove()
+              for(i=0;i<=response.dataitem.length;i++){
+                 $('#category').append("<option class='op' value='"+response.dataitem[i].id+"'>"+ response.dataitem[i].category+"</option>")
+              }
+            }
+        })
+    }
+</script>
 
 {% endblock %}

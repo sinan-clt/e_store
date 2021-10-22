@@ -17,22 +17,23 @@
             <th scope="col">Edit/Delete</th>
           </tr>
         </thead>
-        {% for cat in categr %}
+        
         <tbody>
+          {% for x in data %}
           <tr>
-            <th scope="row">{{cat.id}}</th>
-            <td>{{brand.brand_names}}</td>
-            <td>{{cat.categories}}</td>
-            <td>
-             <a href="/viewcategorydata/{{cat.id}}"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
+            <th scope="row">{{x.id}}</th>
+            <td>{{x.brand_category_id.brand_names}}</td>
 
-            <a href="/deletecategory/{{cat.id}}"> <button onclick="return confirm ('Are You Sure ?')" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>  
+            <td>{{x.categories}}</td>
+            
+            <td>
+             <a href="/viewcategorydata/{{x.id}}"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button></a>
+
+            <a href="/deletecategory/{{x.id}}"> <button onclick="return confirm ('Are You Sure ?')" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>  
         </td>
         
           </tr>
           {% endfor %}
-         
-          
 
         </tbody>
       </table>

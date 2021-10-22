@@ -20,7 +20,7 @@
     <section>
       <nav class="navbar navbar-expand-lg navbar-light  bg-secondary  fixed-top ">
         <div class="container-fluid">
-          <a href="user">  <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %}" width="185"   class="p-1"></a>
+          <a href="/user/">  <img src="{% static 'images/shopify-logo-D197C4F3BC-seeklogo.com.png' %}" width="185"   class="p-1"></a>
           
           <div class="m-auto w-100 p-1">
             <form action="" class="m-auto w-100">
@@ -43,10 +43,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
             <ul class="navbar-nav ml-auto p-3">
               <li class="nav-item col-12 col-lg-auto">
-                <a class="nav-link text-white btn-outline-dark rounded-pill text-center"  href="user">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-white btn-outline-dark rounded-pill text-center"  href="/user/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item col-12 col-lg-auto">
-                <a class="nav-link text-white btn-outline-dark rounded-pill text-center " href="#">Shop</a>
+                <a class="nav-link text-white btn-outline-dark rounded-pill text-center " href="/shopafterlogin/">Shop</a>
               </li>                
              
             <div class="dropdown m-auto">
@@ -54,8 +54,15 @@
                   <i class="fas fa-user"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <a href="profile" class="dropdown-item " type="button" style="font-weight: 700;">My Profile</a>
+                <a href="/profile/" class="dropdown-item " type="button" style="font-weight: 700;">My Profile</a>
+
+                <div>
+                  <div class="dropdown-divider"></div>
+                 <h5 class="dropdown-item" style="font-size: medium;"> Hi,{{register.firstname}}</h5>
+                </div>
               
+             
+            
               
                <div class="dropdown-divider"></div>
                 <a href="" class="dropdown-item active bg-warning " type="button" style="font-weight: 700;">logout</a>
@@ -66,7 +73,7 @@
             
          
          <li class="nav-item col-12 col-lg-auto">
-          <a href="cart" class="nav-link text-white  text-center ml-auto"><i class="fas fa-shopping-cart"></i></a>
+          <a href="/cart/" class="nav-link text-white  text-center ml-auto"><i class="fas fa-shopping-cart"></i></a>
                    
   </ul>
             
@@ -79,7 +86,13 @@
 
     <img src="{% static 'images/unnamed.png' %}" style="height: 200px; width: 200px;" alt="" srcset="" 
     class="rounded-circle mx-auto d-block mt-3">
-        
+    <div>
+      <h5 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(29, 27, 46);">
+        Hi,{{register.firstname}} <i class="far fa-smile"></i>
+      </h5>
+
+    </div>
+       
   <table class="table table-striped ">
     <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Personal Details</h2><br>
     <tbody>
@@ -116,9 +129,6 @@
   </table>
 
 
-
-
-
     <div class="text-center">
     <a href="/viewsingledata/{{register.id}}">  <button type="button" class="btn  btn-outline-primary">EDIT PROFILE</button></a>
     </div>
@@ -136,14 +146,14 @@
       <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
         <h5 class="pb-2">Featured</h5>
         <ul class="text-uppercase list-unstyled">
-          <li><a href="shop">Mens</a></li>
-          <li><a href="shopmensfash">fashion</a></li>
-          <li><a href="shopwatches">watches</a></li>
-          <li><a href="shopmensfash">cloths</a></li>
-          <li><a href="shoptshirt">T-shirts</a></li>
-          <li><a href="shopshoes">shoes</a></li>
-          <li><a href="shopexe">Executive</a></li>
-          <li><a href="shophoodies">Hoodies</a></li>
+          <li><a href="/shop/">Mens</a></li>
+          <li><a href="/shopmensfash/">fashion</a></li>
+          <li><a href="/shopwatches/">watches</a></li>
+          <li><a href="/shopmensfash/">cloths</a></li>
+          <li><a href="/shoptshirt/">T-shirts</a></li>
+          <li><a href="/shopshoes/">shoes</a></li>
+          <li><a href="/shopexe/">Executive</a></li>
+          <li><a href="/shophoodies/">Hoodies</a></li>
         </ul>
       </div>
       <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
@@ -165,9 +175,9 @@
       <div class="footer-one col-lg-3 col-md-6 col-12">
         <h5 class="pb-2">CONTACT US THROUGH</h5>
         <div class="row">
-          <i class="fab fa-instagram p-3"></i>
-          <i class="fab fa-facebook p-3"></i>
-          <i class="fab fa-twitter p-3"></i>
+          <a href="https://www.instagram.com/accounts/login/">  <i class="fab fa-instagram p-3"></i></a>
+          <a href="https://www.facebook.com/"> <i class="fab fa-facebook p-3"></i> </a> 
+          <a href="https://twitter.com/?lang=en"> <i class="fab fa-twitter p-3"></i> </a>
           
   
           <div class="container pt-5">

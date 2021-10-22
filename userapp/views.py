@@ -132,6 +132,14 @@ def changepass(request):
         print(e)
     return render(request,'changepass.html')
 
+
+def shopbasenavtest(request):
+
+    return render(request,'shopbasenavtest.html')
+        
+
+
+
 def cart(request):
  return render(request,'cart.html')  
 def log(request):
@@ -222,8 +230,7 @@ def shophoodies(request):
  return render(request,'shophoodies.html')
 def shopcasualshoes(request):
  return render(request,'shopcasualshoes.html') 
-def shopbasenavtest(request):
- return render(request,'shopbasenavtest.html') 
+
 def shopafterlogin(request):
  return render(request,'shopafterlogin.html') 
 

@@ -1,0 +1,113 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+
+<div class="container py-3 ml-4 mt-3 mb-3 text-left">
+    <h3>Add Products Images</h3>
+</div>
+
+
+<div class="container">
+
+
+    
+    <form class="form bg-transparent mb-2" enctype="multipart/form-data" name="add" action="/addprodimages/" method="POST" style="font-weight: 600;">
+      {% csrf_token %}
+        <div class="form-group">
+            <label class="control-label col-sm-2">Brand:</label>
+            <div class="col-sm-3">
+            <select class="form-control" name="brand" id="brandd" onchange="changee()">
+              <option>Select Brand</option>
+              {% for brnds in brnd %}
+              <option value="{{brnds.id}}">{{brnds.brand_names}}</option>
+              {% endfor %}
+
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Category:</label>
+            <div class="col-sm-3">
+            <select class="form-control" name="category" id="category" onchange="categry()">
+                <option>Select Category</option>
+
+
+
+            </select>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Products:</label>
+            <div class="col-sm-3">
+            <select class="form-control" name="produ" id="product">
+                <option>Select Product</option>
+
+
+            </select>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Product images:</label>
+            <div class="col-sm-8">
+                <input type="file" class="form-control " name="prodimages" >
+                
+                
+            </div>
+          </div> 
+
+          <div class="col-sm-10 pt-3 pb-5">
+            <button type="submit" class="btn btn-primary" name="" value="submit">ADD PRODUCT</button>
+            <div>
+              {{message}}
+            </div>
+            </div>
+         </form>
+
+</div>
+
+<script>
+ $.ajaxSetup({
+ 	 		headers: { "X-CSRFToken": '{{csrf_token}}' }
+		});
+    function changee(){
+        $.ajax({
+            url:'/addimg',
+            type:'POST',
+            data:{
+                brandid : $('#brandd').val()
+            },
+            success:function(response){
+              $('.op1').remove()
+              for(i=0;i<=response.dataitem.length;i++){
+                 $('#category').append("<option class='op1' value='"+response.dataitem[i].id+"'>"+ response.dataitem[i].category+"</option>")
+              }
+            }
+        })
+    }
+
+    function categry(){
+        $.ajax({
+            url:'/changeprod',
+            type:'POST',
+            data:{
+                catid : $('#category').val()
+            },
+            success:function(response){
+                // console.log(response.item)
+              $('.op').remove()
+              for(i=0;i<=response.item.length;i++){
+                 $('#product').append("<option class='op' value='"+response.item[i].id+"'>"+response.item[i].product+" </option>")
+              }
+            }
+        })
+    }
+</script>
+
+{% endblock %}

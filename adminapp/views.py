@@ -1,4 +1,5 @@
 from django.db import reset_queries
+from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from random import random
 from django.http import HttpResponse
@@ -44,9 +45,10 @@ def delete(request,id):
     return redirect('brands')
 
 def categoryy(request):
-    brands=brand.objects.all()
-    categoris=category.objects.all()
-    return render(request,'category.html',{"brands":brands,"categr":categoris})
+ 
+    data = category.objects.select_related('brand_category_id')
+    
+    return render(request,'category.html',{'data':data})
  
 
 def addcategory(request):
@@ -54,9 +56,9 @@ def addcategory(request):
     if request.method=='POST':
         categorie=request.POST['addcategory']
         brandss=request.POST['brands']
-        obj=brand(brand_names=brandss)
-        obj.save()
-        obj1=category(categories=categorie,brand_category_id_id=obj.id)
+        # obj=brand(brand_names=brandss)
+        # obj.save()
+        obj1=category(categories=categorie,brand_category_id_id=brandss)
         obj1.save()
         return redirect('categoryy')
     return render(request,'addcategory.html',{"brands":brands})
@@ -81,9 +83,11 @@ def deletecategory(request,id):
     category.objects.get(id=id).delete()
     return redirect('categoryy')
 
-def addprod(request):
 
-    return render(request,'addprod.html')
+
+
+def addfootwears(request):
+    return render(request,'addfootwears.html')   
 
 
 
@@ -127,8 +131,74 @@ def signupadmin(request):
 
 def discount(request):
  return render(request,'discount.html')
+
+
+def addprodd(request):
+    brands=brand.objects.all()
+    # categoris=category.objects.all()
+
+    # data = category.objects.select_related('brand_category_id')
+
+    if request.method=='POST':
+        brande=request.POST['brand']
+        categoriess=request.POST['category']
+        prod_namee=request.POST['prodname']
+        desc=request.POST['description']
+        rate=request.POST['price']
+        dress_size=request.POST['size_dress']
+        disc=request.POST['discount']
+        # prd_image=request.FILES['prod_image']
+        # image_name=str(random())+prd_image.name
+
+        # obj=FileSystemStorage()
+        # obj.save(image_name,prd_image)
+
+        products=addprod(brand_id=brande,category_id=categoriess,prod_name=prod_namee,description=desc,price=rate,size_dresses=dress_size,discount=disc)
+        products.save()
+
+        return render(request,'addprod.html',{"message":"product added successfully"})
+
+    return render(request,'addprod.html',{"cate":brands})
+
+
+def changecate(request):
+    pro_id=request.POST['brandid']
+    data=category.objects.filter(brand_category_id_id=pro_id)
+    DataJson=[{'id':x.id,'category':x.categories} for x in data]
+    return JsonResponse({'dataitem':DataJson})
+
 def productview(request):
- return render(request,'productview.html')
+    obj=addprod.objects.all()
+    obj2=prod_image.objects.all()
+    return render(request,'productview.html',{"prods":obj,"imag":obj2})
+
+
+
+    
+def updateproduct(request,id):
+    if request.method=='POST':
+        brande=request.POST['brand']
+        categoriess=request.POST['category']
+        prod_namee=request.POST['prod_name']
+        desc=request.POST['description']
+        rate=request.POST['price']
+        dress_size=request.POST['size_dress']
+        disc=request.POST['discount']
+
+        prd_image=request.FILES['prod_image']
+
+        image_namee=str(random())+prd_image.name
+
+        obj=FileSystemStorage()
+        obj.save(image_namee,prd_image)
+
+        addprod.objects.filter(id=id).update(brand=brande,category=categoriess,prod_name=prod_namee,description=desc,discount=disc,price=rate,size_dresses=dress_size,imagee=image_namee)
+        return redirect('productview')
+    
+def deleteproduct(request,id):
+    addprod.objects.get(id=id).delete()
+    return redirect('productview')
+
 def prodviewpage2(request):
  return render(request,'prodviewpage2.html')
 def prodviewpage3(request):
@@ -227,15 +297,65 @@ def updatebanner(request,id):
         imagename=str(random())+bannerimage.name
 
         obj=FileSystemStorage()
-        obj.save()
+        obj.save(imagename,bannerimage)
 
-        bannerr.objects.filter(id=id).update(banner_text=bannertext,banner_image=bannerimage)
+        bannerr.objects.filter(id=id).update(banner_text=bannertext,banner_image=imagename)
         return redirect('banner')
 
 def deletebanner(request,id):
     bannerr.objects.get(id=id).delete()
     return redirect('banner')
 
+def addprodimages(request):
+    brands=brand.objects.all()
+    if request.method=='POST':
+        product=request.POST['produ']
+        prod=request.FILES['prodimages']
+
+        files=str(random())+prod.name
+
+        obj=FileSystemStorage()
+        obj.save(files,prod)
+
+        obj1=prod_image(products_id=product,image=files)
+        obj1.save()
+
+        return render(request,'addprodimages.html',{"message":"Image added Succesfully"})
+
+    return render(request,'addprodimages.html',{"brnd":brands})
+
+def addimg(request):
+    pro_id=request.POST['brandid']
+    data=category.objects.filter(brand_category_id_id=pro_id)
+    DataJson=[{'id':x.id,'category':x.categories} for x in data]
+    return JsonResponse({'dataitem':DataJson})
+
+
+def changeprod(request):
+    prodata=request.POST['catid']
+    pro=addprod.objects.filter(category_id=prodata)
+    projson=[{'id':x.id,'product':x.prod_name} for x in pro]
+    return JsonResponse({'item':projson})
+
+def viewprodslider(request):
+    obj=addprod.objects.all()
+    obj2=prod_image.objects.all()
+    return render(request,'viewprodslider.html',{"prods":obj,"imgs":obj2})
+
+def edtprod(request):
+    pro_id=request.POST['brandid']
+    data=category.objects.filter(brand_category_id_id=pro_id)
+    DataJson=[{'id':x.id,'category':x.categories} for x in data]
+    return JsonResponse({'dataitem':DataJson})
+
+def viewproductdata(request,id):
+    
+    brandds=brand.objects.all()
+    # categoryyy=category.objects.all()
+    obj=prod_image.objects.all()
+
+    obj1=addprod.objects.filter(id=id)
+    return render(request,'editprodview.html',{"productss":obj1,"brnds":brandds,"img":obj})
 
 def editbanner(request):
  return render(request,'editbanner.html')

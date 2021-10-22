@@ -58,7 +58,7 @@ urlpatterns = [
     
     path('changepass/',views.changepass,name='changepass'),
     path('checkout/',views.checkout,name='checkout'),
-    path('payment',views.payment,name='payment'),
+    path('payment/',views.payment,name='payment'),
     path('paymentcomplete/',views.paymentcomplete,name='paymentcomplete'),
     path('paymentfail/',views.paymentfail,name='paymentfail'),
 
@@ -68,6 +68,9 @@ urlpatterns = [
     path('viewsingledata/<int:id>',views.viewsingledata,name='viewsingledata'),
 
     path('update/<int:id>',views.update,name='update'),
+
+
+
 
     
 ]

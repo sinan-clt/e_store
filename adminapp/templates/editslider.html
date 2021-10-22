@@ -11,7 +11,7 @@
 
 
     
-    <form class="form bg-transparent mb-2" name="add" action="/updateslider/{{data.id}}" method="POST" style="font-weight: 600;">
+    <form class="form bg-transparent mb-2" name="add" action="/updateslider/{{data.id}}" method="POST" style="font-weight: 600;" enctype="multipart/form-data">
       {% csrf_token %}
       
 
@@ -32,8 +32,8 @@
             <label class="control-label col-sm-2">Slider image:</label>
             
             <div class="col-sm-8">
-              <img src="/adminapp/media/{{data.image}}" alt="">
-                <input type="file" name="sliderimagee" value="{{data.image}}">
+              <img src="/adminapp/media/{{data.image}}" style="height: 70px;width: 70px;" alt="">
+                <input type="file" name="sliderimagee">
                 
             </div>
           </div> 

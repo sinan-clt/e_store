@@ -1,6 +1,7 @@
 {% extends 'adminbase.html' %}
 {% load static %}
 {% block content %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 
 <style>
@@ -27,29 +28,39 @@
 <section class="container bg-white mb-5">
   
 
-        <div class="row p-3">
+  <div class="row p-3" onclick="window.location.href='/viewprodslider/';">
+    {% for products in prods %}
+    {% for gu in imag %}
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+          
         <div class="card">
-            <img src="{% static 'images/shop/1.jpg' %}" class="card-img-top" alt="...">
+       
+            <img src="/adminapp/media/{{gu.image}}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h6 class="card-title">H&M Men's Plain T-shirts</h6>
+             
+              <h6 class="card-title">{{products.prod_name}}</h6>
               <ul>
-                  <li>Status : Active</li>
-                  <li>Brand : H&M</li> 
-                  <li>Category : T-shirt</li>
-                  <li>Price : 699.00</li>
+                  <li>Brand : {{products.brand.brand_names}}</li>
+                  <li>Category : {{products.category.categories}}</li>
+                  <li>Price : {{products.price}}</li>
                     
               </ul>  
             </div>
             <div class="card-footer text-left">
-              <a href="editprodview">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
-              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
-              </div>
-          </div>
-</div>
+              <a href="/viewproductdata/{{products.id}}">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
+              <!-- <a href="/deleteproduct/{{products.id}}" onclick="return confirm ('Are You Sure ?')">  <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button></a> -->
+              <a href="/deleteproduct/{{products.id}}"> <button onclick="return confirm ('Are You Sure ?')" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>  
 
-<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+              </div>
+              
+          </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+
+   </div>
+<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
     <div class="card">
         <img src="{% static 'images/shop/6.jpg' %}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -67,9 +78,9 @@
           <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
           </div>
       </div>
-</div>
+</div> -->
 
-<div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
+<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
     <div class="card">
         <img src="{% static 'images/png (2).jfif.png' %}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -190,10 +201,9 @@
           </div>
       </div>
 </div>
+   -->
   
-
-   </div>
-
+  
 
 </section>
 
@@ -207,9 +217,9 @@
         </a>
       </li>
       <li class="page-item active"><a class="page-link" style="background-color: black;" href="productview">1</a></li>
-      <li class="page-item"><a class="page-link" href="prodviewpage2">2</a></li>
-      <li class="page-item"><a class="page-link" href="prodviewpage3">3</a></li>
-      <li class="page-item"><a class="page-link" href="prodviewpage4">4</a></li>
+      <li class="page-item"><a class="page-link" href="/prodviewpage2/">2</a></li>
+      <li class="page-item"><a class="page-link" href="/prodviewpage3/">3</a></li>
+      <li class="page-item"><a class="page-link" href="/prodviewpage4/">4</a></li>
       
       <li class="page-item">
         <a class="page-link text-danger text-center" style="width: 60px" href="prodviewpage2" aria-label="Next">
