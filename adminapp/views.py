@@ -354,8 +354,25 @@ def viewproductdata(request,id):
     # categoryyy=category.objects.all()
     obj=prod_image.objects.all()
 
-    obj1=addprod.objects.filter(id=id)
+    obj1=addprod.objects.get(id=id)
     return render(request,'editprodview.html',{"productss":obj1,"brnds":brandds,"img":obj})
+
+# def viewbannerdata(request,id):
+#     singleObj=bannerr.objects.get(id=id)
+#     return render(request,'editbanner.html',{"data":singleObj})
+
+def updatebanner(request,id):
+    if request.method=='POST':
+        bannertext=request.POST['bannerrtext']
+        bannerimage=request.FILES['bannerrimage']
+
+        imagename=str(random())+bannerimage.name
+
+        obj=FileSystemStorage()
+        obj.save(imagename,bannerimage)
+
+        bannerr.objects.filter(id=id).update(banner_text=bannertext,banner_image=imagename)
+        return redirect('banner')
 
 def editbanner(request):
  return render(request,'editbanner.html')
