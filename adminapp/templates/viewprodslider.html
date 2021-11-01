@@ -8,46 +8,43 @@
 <section class="container sproduct">
     
     <div class="row container" >
-        {% for gu in imgs %}
       <div class="col-lg-5 col-md-12 col-12 mt-5">
         
-      <img src="/adminapp/media/{{gu.image}}" alt="" srcset="" id="MainImg"  class="img-fluid w-100 pb-1">
+      <img src="/adminapp/media/{{imgs.image}}" alt="" srcset="" id="MainImg"  class="img-fluid w-100 pb-1">
   
   
       <div class="small-img-group">
         
      
         <div class="small-img-col">
-          <img src="/adminapp/media/{{gu.image}}" alt="" width="100%" srcset="" class="small-img">
+          <img src="/adminapp/media/{{imgs.image}}" alt="" width="100%" srcset="" class="small-img">
         </div>
         <div class="small-img-col">
-          <img src="/adminapp/media/{{gu.image}}" alt="" width="100%" srcset="" class="small-img">
+          <img src="/adminapp/media/{{imgs.image}}" alt="" width="100%" srcset="" class="small-img">
         </div>
         <div class="small-img-col">
-          <img src="/adminapp/media/{{gu.image}}" alt="" width="100%" srcset="" class="small-img">
+          <img src="/adminapp/media/{{imgs.image}}" alt="" width="100%" srcset="" class="small-img">
         </div>
         <div class="small-img-col">
-          <img src="/adminapp/media/{{gu.image}}" alt="" width="100%" srcset="" class="small-img">
+          <img src="/adminapp/media/{{imgs.image}}" alt="" width="100%" srcset="" class="small-img">
          
         </div>
         
       </div>
       
       </div>
-      {% endfor %}
   
       
       <div class="col-lg-5 col-md-12 col-12 mt-5">
-        {% for products in prods %}
-        <p class="fs-5">{{products.category.categories}}</p>
-        <h6 class="mt-3"><b>{{products.brand.brand_names}}</h6></b>
+        <p class="fs-5">{{prods.category.categories}}</p>
+        <h6 class="mt-3"><b>{{prods.brand.brand_names}}</h6></b>
         
   
   
-        <h3 class="py-4">{{products.prod_name}}</h3>
-        <h2>{{products.price}}</h2>
+        <h3 class="py-4">{{prods.prod_name}}</h3>
+        <h2>{{prods.price}}</h2>
 
-        <h6 class="mt-3 p-2"> Size : <b>{{products.size_dresses}}</h6></b>
+        <h6 class="mt-3 p-2"> Size : <b>{{prods.size_dresses}}</h6></b>
 
 
   
@@ -55,7 +52,7 @@
       <span>
         <ul>
         
-          <li>{{products.discount}}<br></li>
+          <li>{{prods.discount}}<br></li>
           <!-- <li>Flat 20% discount on Midnight 12:00 am<br></li>   -->
         
         </ul>
@@ -67,7 +64,7 @@
       <span>
         <ul>
         
-      <li>{{products.description}}</li>
+      <li>{{prods.description}}</li>
       <!-- <li>Sleeve&nbsp;:&nbsp;Half Sleeve<br></li>  
       <li>Fit&nbsp;:&nbsp;Regular<br></li> 
       <li>Fabric&nbsp;:&nbsp;Pure Cotton<br></li> 
@@ -79,7 +76,6 @@
   
         </ul>
       </span>
-      {% endfor %}
       
         </div>
         

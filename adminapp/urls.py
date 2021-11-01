@@ -59,7 +59,7 @@ urlpatterns = [
     path('addimg',views.addimg,name='addimg'),
     path('changeprod',views.changeprod,name='changeprod'),
 
-    path('viewprodslider/',views.viewprodslider,name='viewprodslider'),  
+    path('viewprodslider/<int:id>',views.viewprodslider,name='viewprodslider'),  
 
     path('edtprod',views.edtprod,name='edtprod'),
 

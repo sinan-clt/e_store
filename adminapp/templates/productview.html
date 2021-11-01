@@ -30,7 +30,7 @@
 
   <div class="row p-3" onclick="window.location.href='/viewprodslider/';">
     {% for products in prods %}
-    {% for gu in imag %}
+  
 
         <div class="col-lg-3 col-md-4 col-sm-6 col-12 ">
           
@@ -51,12 +51,14 @@
               <a href="/viewproductdata/{{products.id}}">  <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</button></a>
               <!-- <a href="/deleteproduct/{{products.id}}" onclick="return confirm ('Are You Sure ?')">  <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button></a> -->
               <a href="/deleteproduct/{{products.id}}"> <button onclick="return confirm ('Are You Sure ?')" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>  
+              <a href="/viewprodslider/{{products.id}}">  <button type="button" class="btn bg-success"><i class="fas fa-eye"></i>View</button></a>
+
 
               </div>
               
           </div>
       </div>
-      {% endfor %}
+      
       {% endfor %}
 
    </div>

@@ -84,8 +84,6 @@ def deletecategory(request,id):
     return redirect('categoryy')
 
 
-
-
 def addfootwears(request):
     return render(request,'addfootwears.html')   
 
@@ -172,28 +170,6 @@ def productview(request):
     obj2=prod_image.objects.all()
     return render(request,'productview.html',{"prods":obj,"imag":obj2})
 
-
-
-    
-def updateproduct(request,id):
-    if request.method=='POST':
-        brande=request.POST['brand']
-        categoriess=request.POST['category']
-        prod_namee=request.POST['prod_name']
-        desc=request.POST['description']
-        rate=request.POST['price']
-        dress_size=request.POST['size_dress']
-        disc=request.POST['discount']
-
-        prd_image=request.FILES['prod_image']
-
-        image_namee=str(random())+prd_image.name
-
-        obj=FileSystemStorage()
-        obj.save(image_namee,prd_image)
-
-        addprod.objects.filter(id=id).update(brand=brande,category=categoriess,prod_name=prod_namee,description=desc,discount=disc,price=rate,size_dresses=dress_size,imagee=image_namee)
-        return redirect('productview')
     
 def deleteproduct(request,id):
     addprod.objects.get(id=id).delete()
@@ -337,8 +313,8 @@ def changeprod(request):
     projson=[{'id':x.id,'product':x.prod_name} for x in pro]
     return JsonResponse({'item':projson})
 
-def viewprodslider(request):
-    obj=addprod.objects.all()
+def viewprodslider(request,id):
+    obj=addprod.objects.get(id=id)
     obj2=prod_image.objects.all()
     return render(request,'viewprodslider.html',{"prods":obj,"imgs":obj2})
 
@@ -352,27 +328,35 @@ def viewproductdata(request,id):
     
     brandds=brand.objects.all()
     # categoryyy=category.objects.all()
-    obj=prod_image.objects.all()
+    # obj=prod_image.objects.all()
 
     obj1=addprod.objects.get(id=id)
-    return render(request,'editprodview.html',{"productss":obj1,"brnds":brandds,"img":obj})
+    return render(request,'editprodview.html',{"productss":obj1,"brnds":brandds})
 
-# def viewbannerdata(request,id):
-#     singleObj=bannerr.objects.get(id=id)
-#     return render(request,'editbanner.html',{"data":singleObj})
 
-def updatebanner(request,id):
+
+    
+def updateproduct(request,id):
     if request.method=='POST':
-        bannertext=request.POST['bannerrtext']
-        bannerimage=request.FILES['bannerrimage']
+        brande=request.POST['brand']
+        categoriess=request.POST['category']
+        prod_namee=request.POST['prod_name']
+        desc=request.POST['description']
+        rate=request.POST['price']
+        disc=request.POST['discount']
+        dress_size=request.POST['size_dress']
 
-        imagename=str(random())+bannerimage.name
 
-        obj=FileSystemStorage()
-        obj.save(imagename,bannerimage)
+        # prd_image=request.FILES['prod_image']
 
-        bannerr.objects.filter(id=id).update(banner_text=bannertext,banner_image=imagename)
-        return redirect('banner')
+        # image_namee=str(random())+prd_image.name
+
+        # obj=FileSystemStorage()
+        # obj.save(image_namee,prd_image)
+
+        addprod.objects.filter(id=id).update(brand_id=brande,category_id=categoriess,prod_name=prod_namee,description=desc,discount=disc,price=rate,size_dresses=dress_size)
+        return redirect('productview')
+
 
 def editbanner(request):
  return render(request,'editbanner.html')

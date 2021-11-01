@@ -1,0 +1,119 @@
+{% extends "adminmaster.html" %}
+{% load static %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-7">
+        <div style="background-color: rgb(175, 228, 228);margin-top: 50px; margin-bottom: 50px;width: 430px;">
+            <br>
+            
+                <div  class="container " >
+        
+                        <form class=" text-center"   align="center" action="/updatepro/{{prod.id}}" method="POST">
+                            <br><br>
+                            {% csrf_token %}
+                            <div class="form-group row ">
+                                
+                                <label for="formGroupExampleInput" style="width: 150px;">Brand</label>
+                                <select name="brand" id="brand" onclick="Changecat()" >
+                                    {% for data in brands %}      
+                            <option value="{{data.id}}">{{data.brand_name}}</option>
+                            {% endfor %}
+                
+                                </select>
+                                
+                            </div>
+                            <div class="form-group row ">
+                               
+                                <label for="formGroupExampleInput" style="width: 150px;">Categories</label>
+                                <select name="cat"  id="cat">
+                                  
+                                </select>
+                               
+                            </div>
+                            
+                            <div class="form-group row ">
+                                <label for="formGroupExampleInput" style="width: 150px;">Product Name</label>
+                                <input type="text" name="product" value="{{prod.product_name}}" class="form-control" id="formGroupExampleInput" style="width: 250px;">
+                            </div>
+                            <div class=" form-group row">
+                                <label for="formGroupExampleInput" style="width: 150px;">price</label>
+                                <input type="text" name="price" value="{{prod.price}}" class="form-control" id="formGroupExampleInput" style="width: 250px;">
+                            </div>
+                            <!-- <div class="form-group row">
+                                <label for="formGroupExampleInput"  style="width:150px;">color</label>
+                                <div class="form-check" name=color>
+                                    <input type="checkbox">Red&nbsp;
+                                    <input type="checkbox">Blue &nbsp;
+                                    <input type="checkbox">Black &nbsp;<br>
+                                    <input type="checkbox">Green &nbsp;
+                                    <input type="checkbox">white &nbsp;
+                                    <input type="checkbox">yellow
+                                </div>
+                            </div> -->
+                            <div class="form-group row ">
+                                <label for="formGroupExampleInput2" style="width: 150px;">Description</label>
+                                <textarea name="desc" placeholder="" value="" id="" cols="29" rows="5">{{prod.description}}</textarea> &nbsp;
+                            </div>
+                            <!-- <div class="form-group row">
+                                <label for="formGroupExampleInput" style="width: 150px">size</label>
+                                <div class="form-check" name="size">
+                                    <input type="checkbox">S&nbsp;
+                                    <input type="checkbox">M &nbsp;
+                                    <input type="checkbox">L &nbsp;
+                                    <input type="checkbox">XL
+                                </div>
+                            </div> -->
+                            <div class="form-group row">
+                                <label for="formGroupExampleInput" style="width: 150px">Discount</label>
+                                <input type="text"value="{{prod.discount}}" name="discount" id="">
+                                    
+                                </select>
+                            </div>
+                            
+                
+                
+                                <!-- <input class="form-control" style="width: 300px;" type="file" id="formFileMultiple" multiple > -->
+                            </div>
+                          
+                            <div class="form-group row ">
+                                <label for="formGroupExampleInput" style="width:150px;"></label>
+                                <button type="submit" class="btn btn-info">submit</button>
+                            </div>
+                      
+                
+                
+                    </form>
+                </div>
+            
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+<script>
+
+$.ajaxSetup({
+ 	 		headers: { "X-CSRFToken": '{{csrf_token}}' }
+		});
+        function Changecat(){
+            $.ajax({
+                url:'/changecato/',
+                type:'POST',
+                data:{
+                    brandid : $('#brand').val()
+                },
+                success:function(response){
+                   // console.log(response.dataitem)
+                   $('.op').remove()
+                   for(i=0;i<=response.dataitem.length;i++){
+                       $('#cat').append("<option class='op' value='"+response.dataitem[i].id+"'>"+response.dataitem[i].category+"</option>")
+                   }
+                
+                }
+            })
+        }
+</script>
+
+{% endblock %}
